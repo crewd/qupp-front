@@ -33,7 +33,7 @@ const Home: NextPage = () => {
         </section>
         <section className="grid grid-cols-3 gap-[100px] mr-[180px]">
           <Link href="/">
-            <a className="bg-white rounded-3xl p-[15px] w-[99px] h-[124px]">
+            <a className="bg-white rounded-3xl p-[15px] w-[99px] h-[124px] shadow-xl">
               <article>
                 <p className="font-bold text-gray-3">
                   내가 <br /> 등록한
@@ -47,7 +47,7 @@ const Home: NextPage = () => {
             </a>
           </Link>
           <Link href="/">
-            <a className="bg-white rounded-3xl p-[15px] w-[99px] h-[124px]">
+            <a className="bg-white rounded-3xl p-[15px] w-[99px] h-[124px] shadow-xl">
               <article>
                 <p className="font-bold text-gray-3">
                   내가 <br /> 등록한
@@ -61,7 +61,7 @@ const Home: NextPage = () => {
             </a>
           </Link>
           <Link href="/">
-            <a className="bg-white rounded-3xl p-[15px] w-[99px] h-[124px]">
+            <a className="bg-white rounded-3xl p-[15px] w-[99px] h-[124px] shadow-xl">
               <article>
                 <p className="font-bold text-secondary-sBlue pt-[15px] leading-[20px]">
                   즐겨찾기
