@@ -23,7 +23,7 @@ const Home: NextPage = () => {
             <p className="text-max leading-[80px]">대학교 공부는</p>
             <p className="text-max leading-[80px]">커프에서 물어보세요!</p>
           </div>
-          <button className="rounded-3xl bg-primary w-[138px] h-[52px] text-white">
+          <button className="rounded-3xl bg-primary w-[138px] h-[52px] text-white hover:bg-white hover:text-primary hover:border hover:border-primary">
             바로 질문하기
           </button>
         </div>
