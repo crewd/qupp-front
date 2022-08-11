@@ -31,7 +31,7 @@ const Home: NextPage = () => {
             바로 질문하기
           </button>
         </section>
-        <section className="grid grid-cols-3 gap-[100px] mr-[180px]">
+        <section className="grid grid-cols-3 gap-[100px] ml-[10px] mr-[130px]">
           <Link href="/">
             <a className="bg-white rounded-3xl p-[15px] w-[99px] h-[124px] shadow-xl">
               <article>
