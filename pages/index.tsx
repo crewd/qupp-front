@@ -2,7 +2,11 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import {
+  faArrowRight,
+  faQuoteLeft,
+  faQuoteRight,
+} from '@fortawesome/free-solid-svg-icons';
 
 const Home: NextPage = () => {
   return (
@@ -14,58 +18,123 @@ const Home: NextPage = () => {
           content="직접 해결하기 어려운 대학교 공부는 커프에서 물어보세요!"
         />
       </Head>
-      <div className="h-[100vh] bg-gray-5 fixed w-full top-0 left-0 right-0 -z-10"></div>
-      <div className="mt-[56px] w-[1100px] flex justify-between">
-        <div className="mt-[95px] font-bold">
-          <div className="mb-[50px]">
-            <p className="text-md mb-[10px]">인문부터 예술까지 어느 분야든</p>
-            <p className="text-max leading-[80px]">직접 해결하기 어려운</p>
-            <p className="text-max leading-[80px]">대학교 공부는</p>
-            <p className="text-max leading-[80px]">커프에서 물어보세요!</p>
-          </div>
-          <button className="rounded-3xl bg-primary w-[138px] h-[52px] text-white hover:bg-white hover:text-primary hover:border hover:border-primary">
-            바로 질문하기
-          </button>
+      <article className="h-[808px] w-full absolute top-0 bg-gray-5 -z-10">
+        <div className="mt-[136px] w-[1280px] flex justify-between mx-auto">
+          <section className="mt-[95px] font-bold">
+            <article className="mb-[50px]">
+              <p className="text-md mb-[10px]">인문부터 예술까지 어느 분야든</p>
+              <p className="text-max leading-[80px]">직접 해결하기 어려운</p>
+              <p className="text-max leading-[80px]">대학교 공부는</p>
+              <p className="text-max leading-[80px]">커프에서 물어보세요!</p>
+            </article>
+            <button className="rounded-3xl bg-primary w-[138px] h-[52px] text-white hover:bg-white hover:text-primary hover:border hover:border-primary">
+              바로 질문하기
+            </button>
+          </section>
+          <section className="grid grid-cols-3 gap-[100px] mr-[180px]">
+            <Link href="/">
+              <a className="bg-white rounded-3xl p-[15px] w-[99px] h-[124px]">
+                <article>
+                  <p className="font-bold text-gray-3">
+                    내가 <br /> 등록한
+                    <br /> <span className="text-secondary-sBlue">질문</span>
+                  </p>
+                  <FontAwesomeIcon
+                    className="text-secondary-sBlue"
+                    icon={faArrowRight}
+                  />
+                </article>
+              </a>
+            </Link>
+            <Link href="/">
+              <a className="bg-white rounded-3xl p-[15px] w-[99px] h-[124px]">
+                <article>
+                  <p className="font-bold text-gray-3">
+                    내가 <br /> 등록한
+                    <br /> <span className="text-secondary-sBlue">답변</span>
+                  </p>
+                  <FontAwesomeIcon
+                    className="text-secondary-sBlue"
+                    icon={faArrowRight}
+                  />
+                </article>
+              </a>
+            </Link>
+            <Link href="/">
+              <a className="bg-white rounded-3xl p-[15px] w-[99px] h-[124px]">
+                <article>
+                  <p className="font-bold text-secondary-sBlue pt-[15px] leading-[20px]">
+                    즐겨찾기
+                    <br /> <span className="text-gray-3">목록</span>
+                  </p>
+                  <FontAwesomeIcon
+                    className="text-secondary-sBlue mt-[23px]"
+                    icon={faArrowRight}
+                  />
+                </article>
+              </a>
+            </Link>
+          </section>
         </div>
-        <div className="grid grid-cols-3 gap-[100px]">
-          <Link href="/">
-            <a className="bg-white rounded-3xl p-[15px] w-[99px] h-[124px]">
-              <p className="font-bold text-gray-3">
-                내가 <br /> 등록한
-                <br /> <span className="text-secondary-sBlue">질문</span>
-              </p>
-              <FontAwesomeIcon
-                className="text-secondary-sBlue"
-                icon={faArrowRight}
-              />
-            </a>
-          </Link>
-          <Link href="/">
-            <a className="bg-white rounded-3xl p-[15px] w-[99px] h-[124px]">
-              <p className="font-bold text-gray-3">
-                내가 <br /> 등록한
-                <br /> <span className="text-secondary-sBlue">답변</span>
-              </p>
-              <FontAwesomeIcon
-                className="text-secondary-sBlue"
-                icon={faArrowRight}
-              />
-            </a>
-          </Link>
-          <Link href="/">
-            <a className="bg-white rounded-3xl p-[15px] w-[99px] h-[124px]">
-              <p className="font-bold text-secondary-sBlue pt-[15px] leading-[20px]">
-                즐겨찾기
-                <br /> <span className="text-gray-3">목록</span>
-              </p>
-              <FontAwesomeIcon
-                className="text-secondary-sBlue mt-[23px]"
-                icon={faArrowRight}
-              />
-            </a>
-          </Link>
+      </article>
+      <article className="h-[808px] mt-[808px] bg-white flex flex-col justify-center items-center">
+        <div className="flex text-secondary-sBlue">
+          <FontAwesomeIcon icon={faQuoteLeft} size="2x" />
+          <h1 className="text-max leading-[80px] font-bold px-[16px]">
+            모르는 전공 문제를 물어볼 공간을 찾고 계신가요?
+          </h1>
+          <FontAwesomeIcon icon={faQuoteRight} size="2x" />
         </div>
-      </div>
+        <h2 className="text-xl text-gray-3 leading-[40px]">
+          QUPP에서 지금 바로 질문을 등록해 보세요!
+        </h2>
+        <section className="mt-[70px] grid grid-cols-2 gap-[70px]">
+          <article className="w-[247px] h-[169px] border border-primary relative flex justify-center items-center">
+            <div className="absolute w-full h-full border border-primary top-[5px] left-[5px] text-center">
+              <h3 className="text-xl font-black text-secondary-sBlue leading-[80px]">
+                질문하기
+              </h3>
+              <article className="text-sm text-gray-3 leading-[26px]">
+                <p>QUPP는 어떤 문제든 괜찮아요.</p>
+                <p>사진, 글로 질문을 등록할 수 있어요.</p>
+              </article>
+            </div>
+          </article>
+          <article className="w-[247px] h-[169px] border border-primary relative flex justify-center items-center">
+            <div className="absolute w-full h-full border border-primary top-[5px] left-[5px] text-center">
+              <h3 className="text-xl font-black text-secondary-sBlue leading-[80px]">
+                댓글달기
+              </h3>
+              <article className="text-sm text-gray-3 leading-[26px]">
+                <p>나의 생각을 사진, 글을 이용해</p>
+                <p>댓글을 달 수 있어요.</p>
+              </article>
+            </div>
+          </article>
+          <article className="w-[247px] h-[169px] border border-primary relative flex justify-center items-center">
+            <div className="absolute w-full h-full border border-primary top-[5px] left-[5px] text-center">
+              <h3 className="text-xl font-black text-secondary-sBlue leading-[80px]">
+                검색하기
+              </h3>
+              <article className="text-sm text-gray-3 leading-[26px]">
+                <p>내가 궁금한 문제를 검색을 통해</p>
+                <p>찾아 볼 수 있어요.</p>
+              </article>
+            </div>
+          </article>
+          <article className="w-[247px] h-[169px] border border-primary relative flex justify-center items-center">
+            <div className="absolute w-full h-full border border-primary top-[5px] left-[5px] text-center">
+              <h3 className="text-xl font-black text-secondary-sBlue leading-[80px]">
+                모아보기
+              </h3>
+              <article className="text-sm text-gray-3 leading-[26px]">
+                <p>마이페이지에서 내가 질문하고</p>
+                <p>답변한 글을 확인 할 수 있어요.</p>
+              </article>
+            </div>
+          </article>
+        </section>
+      </article>
     </div>
   );
 };

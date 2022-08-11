@@ -3,8 +3,8 @@ import React from 'react';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="w-[1320px] m-auto px-[20px]">
-      <header className="flex justify-between items-center h-[80px]">
+    <div>
+      <header className=" w-[1320px] px-[20px] m-auto flex justify-between items-center h-[80px]">
         <h2 className="font-bold text-xxl">QUPP</h2>
         <nav>
           <button className="w-[90px] h-[40px] bg-primary text-white rounded-3xl">
