@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
@@ -9,9 +10,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           <button className="w-[90px] h-[40px] bg-primary text-white rounded-3xl">
             로그인
           </button>
-          <button className="w-[90px] h-[40px] ml-[30px] rounded-3xl">
-            회원가입
-          </button>
+          <Link href="/">
+            <a className="w-[90px] h-[40px] ml-[50px] rounded-3xl">회원가입</a>
+          </Link>
         </nav>
       </header>
       <main className="my-[20px]">{children}</main>
