@@ -23,19 +23,21 @@ module.exports = {
           sPurple: "#AAB6FB"
         },
         gray: {
-          100: "#3A3A3A",
-          200: "#4D4D4D",
-          300: "#656565",
-          400: "#868686",
-          500: "#B1B1B1",
+          1: "#3A3A3A",
+          2: "#4D4D4D",
+          3: "#656565",
+          4: "#868686",
+          5: "#B1B1B1",
         },
         system: {
           green: "#289800",
           yellow: "#F0CA00",
           red: "#C10000"
         }
-
       },
+      fontFamily: {
+        sans: ["Noto Sans KR", 'sans-serif']
+      }
     },
   },
   plugins: [],
