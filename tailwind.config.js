@@ -1,6 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [],
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
     extend: {
       fontSize: {
@@ -15,16 +18,23 @@ module.exports = {
       },
       colors: {
         primary: "#6096FD",
-        secondary: "#031B88",
-        tertiary: "#AAB6FB",
-        gray1: "#3A3A3A",
-        gray2: "#4D4D4D",
-        gray3: "#656565",
-        gray4: "#868686",
-        gray5: "#B1B1B1",
-        system1: "#289800",
-        system2: "#F0CA00",
-        system3: "#C10000"
+        secondary: {
+          sBlue: "#031B88",
+          sPurple: "#AAB6FB"
+        },
+        gray: {
+          100: "#3A3A3A",
+          200: "#4D4D4D",
+          300: "#656565",
+          400: "#868686",
+          500: "#B1B1B1",
+        },
+        system: {
+          green: "#289800",
+          yellow: "#F0CA00",
+          red: "#C10000"
+        }
+
       },
     },
   },
