@@ -11,7 +11,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             로그인
           </button>
           <Link href="/">
-            <a className="w-[90px] h-[40px] ml-[50px] rounded-3xl">회원가입</a>
+            <a className="w-[90px] h-[40px] ml-[50px] rounded-3xl text-gray-1">
+              회원가입
+            </a>
           </Link>
         </nav>
       </header>
