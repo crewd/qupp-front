@@ -76,7 +76,7 @@ const Home: NextPage = () => {
           </Link>
         </section>
       </article>
-      <article className="h-[808px] w-[1320px] px-[20px] bg-white flex flex-col justify-center items-center">
+      <article className="h-[808px] w-[1320px] px-[20px] m-auto bg-white flex flex-col justify-center items-center">
         <div className="flex text-secondary-sBlue">
           <FontAwesomeIcon icon={faQuoteLeft} size="2x" />
           <h1 className="text-max leading-[80px] font-bold px-[16px]">
