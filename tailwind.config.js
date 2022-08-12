@@ -37,8 +37,11 @@ module.exports = {
       },
       fontFamily: {
         sans: ["Noto Sans KR", 'sans-serif']
+      },
+      flex: {
+        "0-auto": "0 0 auto"
       }
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar-hide")],
 }
