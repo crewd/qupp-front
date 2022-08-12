@@ -11,15 +11,17 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               <h2 className="font-bold text-xxl">QUPP</h2>
             </a>
           </Link>
-          <nav>
+          <nav className="flex justify-between">
             <button className="w-[90px] h-[40px] bg-primary text-white rounded-3xl">
-              로그인
+              <Link href="/login">
+                <a className="block">로그인</a>
+              </Link>
             </button>
-            <Link href="/signup">
-              <a className="w-[90px] h-[40px] ml-[50px] rounded-3xl text-gray-1">
-                회원가입
-              </a>
-            </Link>
+            <button className="w-[90px] h-[40px] ml-[20px] rounded-3xl text-gray-1">
+              <Link href="/signup">
+                <a className="block">회원가입</a>
+              </Link>
+            </button>
           </nav>
         </div>
       </header>
