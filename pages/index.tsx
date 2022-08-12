@@ -18,8 +18,8 @@ const Home: NextPage = () => {
           content="직접 해결하기 어려운 대학교 공부는 커프에서 물어보세요!"
         />
       </Head>
-      <div className="h-[808px] w-full min-w-[1320px] absolute top-0 left-0 right-0 bg-gray-5 -z-10" />
-      <article className="mt-[56px] w-[1320px] px-[20px] h-[673px] flex justify-between mx-auto">
+      <div className="h-[808px] w-full min-w-[1280px] absolute top-0 left-0 right-0 bg-gray-5 -z-10" />
+      <article className="h-[673px] flex justify-between">
         <section className="mt-[95px] font-bold">
           <article className="mb-[50px]">
             <p className="text-md mb-[10px]">인문부터 예술까지 어느 분야든</p>
@@ -76,7 +76,7 @@ const Home: NextPage = () => {
           </Link>
         </section>
       </article>
-      <article className="h-[808px] w-[1320px] px-[20px] m-auto bg-white flex flex-col justify-center items-center">
+      <article className="h-[808px] bg-white flex flex-col justify-center items-center">
         <div className="flex text-secondary-sBlue">
           <FontAwesomeIcon icon={faQuoteLeft} size="2x" />
           <h1 className="text-max leading-[80px] font-bold px-[16px]">
