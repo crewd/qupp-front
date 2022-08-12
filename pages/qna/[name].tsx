@@ -21,12 +21,12 @@ const QnA = () => {
   return (
     <div>
       <header className="border-b-[3px] border-primary pb-[15px]">
-        <h2 className="text-xxl leading-[42px] text-primary font-bold">
+        <h2 className="lg:text-xxl text-xl leading-[42px] text-primary font-bold">
           카테고리
         </h2>
       </header>
       <nav className="flex justify-center w-full pt-[30px]">
-        <ul className="flex sm:justify-between gap-[60px] w-[768px] overflow-x-auto scrollbar-hide text-lg flex-nowrap pb-[25px]">
+        <ul className="flex sm:justify-between gap-[60px] w-[768px] overflow-x-auto scrollbar-hide lg:text-lg text-md flex-nowrap pb-[25px]">
           <li
             className={`
               flex-0-auto

@@ -12,12 +12,12 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             </a>
           </Link>
           <nav className="flex justify-between">
-            <button className="w-[90px] h-[40px] bg-primary text-white rounded-3xl">
+            <button className="lg:w-[90px] w-[60px] lg:h-[40px] h-[30px] bg-primary text-white rounded-3xl">
               <Link href="/login">
                 <a className="block">로그인</a>
               </Link>
             </button>
-            <button className="w-[90px] h-[40px] ml-[20px] rounded-3xl text-gray-1">
+            <button className="lg:w-[90px] w-[60px] lg:h-[40px] h-[30px] ml-[20px] rounded-3xl text-gray-1">
               <Link href="/signup">
                 <a className="block">회원가입</a>
               </Link>
