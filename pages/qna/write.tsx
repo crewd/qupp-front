@@ -51,7 +51,7 @@ const AddPost = () => {
                 </button>
               </div>
               {selectOpened && (
-                <ul className="absolute top-[100%] bg-white w-[130px] border border-primary border-t-0 rounded-b-lg shadow-lg">
+                <ul className="absolute top-[100%] bg-white w-[130px] border border-primary border-t-0 rounded-b-lg shadow-lg z-20">
                   {category.map((data) => (
                     <li
                       className="py-[5px] hover:bg-gray-100 cursor-pointer"
