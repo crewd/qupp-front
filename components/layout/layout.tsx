@@ -25,7 +25,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           </nav>
         </div>
       </header>
-      <main className="mt-[56px] px-[20px] m-auto">{children}</main>
+      <main className="mt-[56px] m-auto">{children}</main>
     </div>
   );
 };

@@ -19,7 +19,7 @@ const Home: NextPage = () => {
         />
       </Head>
       <div className="h-[808px] w-full absolute top-0 left-0 right-0 bg-gray-5 -z-10" />
-      <article className="h-[673px] max-w-[1280px] m-auto flex justify-between">
+      <article className="h-[673px] max-w-[1280px] px-[20px] m-auto flex justify-between">
         <section className="mt-[95px] font-bold">
           <article className="mb-[50px]">
             <p className="text-md mb-[10px]">인문부터 예술까지 어느 분야든</p>

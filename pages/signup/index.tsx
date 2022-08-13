@@ -2,7 +2,7 @@ import Head from 'next/head';
 
 const SignUpPage = () => {
   return (
-    <div>
+    <div className="px-[20px]">
       <Head>
         <title>회원가입</title>
         <meta name="description" content="회원가입" />

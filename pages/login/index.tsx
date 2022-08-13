@@ -2,7 +2,7 @@ import Head from 'next/head';
 
 const LoginPage = () => {
   return (
-    <div>
+    <div className="mx-[20px]">
       <Head>
         <title>로그인</title>
         <meta name="description" content="로그인" />
