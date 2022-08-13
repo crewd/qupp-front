@@ -17,7 +17,7 @@ const QnA = () => {
   }, [name]);
 
   return (
-    <div className="max-w-[1280px] px-[20px] m-auto">
+    <div className="max-w-[1280px] m-auto">
       <header className="border-b-[3px] border-primary pb-[15px]">
         <h2 className="lg:text-xxl text-xl leading-[42px] text-primary font-bold">
           카테고리
