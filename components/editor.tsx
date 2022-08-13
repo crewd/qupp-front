@@ -41,11 +41,10 @@ const QuillEditor = () => {
 
   return (
     <ReactQuill
-      className="h-[500px] border-pimary"
+      className="h-[500px]"
       theme="snow"
       modules={modules}
       formats={formats}
-      style={{ borderColor: '#6096FD' }}
     />
   );
 };
