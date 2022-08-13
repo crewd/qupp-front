@@ -102,11 +102,11 @@ const Home: NextPage = () => {
           <article className="w-[247px] h-[169px] border border-primary relative flex justify-center items-center">
             <div className="absolute w-full h-full border border-primary top-[5px] left-[5px] text-center">
               <h3 className="text-xl font-black text-secondary-sBlue leading-[80px]">
-                댓글달기
+                답변하기
               </h3>
               <article className="text-sm text-gray-3 leading-[26px]">
-                <p>나의 생각을 사진, 글을 이용해</p>
-                <p>댓글을 달 수 있어요.</p>
+                <p>나의 생각을</p>
+                <p>사진, 글로 답변할 수 있어요.</p>
               </article>
             </div>
           </article>
