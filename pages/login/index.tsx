@@ -7,7 +7,7 @@ const LoginPage = () => {
         <title>로그인</title>
         <meta name="description" content="로그인" />
       </Head>
-      <div className="sm:w-[480px] w-full sm:px-[30px] sm:py-[40px] m-auto flex justify-center flex-col sm:border sm:shadow-xl sm:rounded-2xl">
+      <div className="sm:w-[480px] w-full sm:px-[30px] sm:py-[40px] m-auto flex justify-center flex-col sm:border sm:shadow-xl sm:rounded-3xl">
         <p className="font-bold text-xl text-gray-1 mb-[30px] text-center">
           로그인
         </p>

@@ -7,7 +7,7 @@ const SignUpPage = () => {
         <title>회원가입</title>
         <meta name="description" content="회원가입" />
       </Head>
-      <div className="sm:w-[600px] w-full sm:px-[60px] sm:py-[40px] m-auto flex justify-center flex-col sm:border sm:shadow-xl sm:rounded-2xl">
+      <div className="sm:w-[600px] w-full sm:px-[60px] sm:py-[40px] m-auto flex justify-center flex-col sm:border sm:shadow-xl sm:rounded-3xl">
         <p className="font-bold text-xl sm:text-left text-center text-gray-1 mb-[30px]">
           회원가입
         </p>
