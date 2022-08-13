@@ -10,10 +10,8 @@ const QnA = () => {
 
   useEffect(() => {
     const element = menuRef.current;
-    if (!element) {
-      return;
-    }
-    if (element.innerHTML === name) {
+
+    if (element && element.innerHTML === name) {
       element.scrollIntoView();
     }
   }, [name]);
