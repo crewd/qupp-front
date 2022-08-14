@@ -75,6 +75,11 @@ const AddPost = () => {
             <WysiwygEditor />
           </div>
         </div>
+        <div className="flex justify-end pt-[10px]">
+          <button className="bg-primary text-white font-bold rounded-full w-[106px] h-[56px]">
+            완료
+          </button>
+        </div>
       </div>
     </div>
   );
