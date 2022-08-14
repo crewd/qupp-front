@@ -6,8 +6,8 @@ const BgTitle = ({ children }: { children: React.ReactNode }) => {
   return (
     <div>
       <div className="absolute top-0 left-0 right-0 w-full h-[400px] bg-gray-300 -z-10" />
-      <div className="mt-[250px]">
-        <div className="mb-[60px] bg-primary w-[277px] h-[70px] leading-[68px] flex items-center pr-[20px] justify-between rounded-tr-2xl">
+      <div className="mt-[252px]">
+        <div className="mb-[60px] bg-primary w-[228px] h-[68px] leading-[68px] flex items-center pr-[20px] justify-between rounded-tr-2xl">
           <Link href="/">
             <a className=" w-[80px] h-[70px]">
               <FontAwesomeIcon
