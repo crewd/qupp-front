@@ -1,16 +1,15 @@
 import Head from 'next/head';
+import BgTitle from '../../components/common/bgTitle';
 
 const LoginPage = () => {
   return (
-    <div className="px-[20px]">
+    <div>
       <Head>
         <title>로그인</title>
         <meta name="description" content="로그인" />
       </Head>
+      <BgTitle>로그인</BgTitle>
       <div className="sm:w-[480px] w-full sm:px-[30px] sm:py-[40px] m-auto flex justify-center flex-col sm:border sm:shadow-xl sm:rounded-3xl">
-        <p className="font-bold text-xl text-gray-1 mb-[30px] text-center">
-          로그인
-        </p>
         <div className="w-full flex flex-col gap-[20px]">
           <div className="w-full text-gray-1">
             <p className="mb-[15px]">이메일</p>
