@@ -34,7 +34,7 @@ const QnA = () => {
                   : 'text-gray-3 hover:border-b-[3px] hover:border-primary hover:text-primary'
               }`}
           >
-            <Link href="/qna/인문">
+            <Link href="/qna/list/인문">
               <a ref={menuRef}>인문</a>
             </Link>
           </li>
@@ -47,7 +47,7 @@ const QnA = () => {
                 : 'text-gray-3 hover:border-b-[3px] hover:border-primary hover:text-primary'
             }`}
           >
-            <Link href="/qna/사회">
+            <Link href="/qna/list/사회">
               <a ref={menuRef}>사회</a>
             </Link>
           </li>
@@ -60,7 +60,7 @@ const QnA = () => {
                 : 'text-gray-3 hover:border-b-[3px] hover:border-primary hover:text-primary'
             }`}
           >
-            <Link href="/qna/상경">
+            <Link href="/qna/list/상경">
               <a ref={menuRef}>상경</a>
             </Link>
           </li>
@@ -73,7 +73,7 @@ const QnA = () => {
                 : 'text-gray-3 hover:border-b-[3px] hover:border-primary hover:text-primary'
             }`}
           >
-            <Link href="/qna/자연과학">
+            <Link href="/qna/list/자연과학">
               <a ref={menuRef}>자연과학</a>
             </Link>
           </li>
@@ -86,7 +86,7 @@ const QnA = () => {
                 : 'text-gray-3 hover:border-b-[3px] hover:border-primary hover:text-primary'
             }`}
           >
-            <Link href="/qna/공학">
+            <Link href="/qna/list/공학">
               <a ref={menuRef}>공학</a>
             </Link>
           </li>
@@ -99,7 +99,7 @@ const QnA = () => {
                 : 'text-gray-3 hover:border-b-[3px] hover:border-primary hover:text-primary'
             }`}
           >
-            <Link href="/qna/예술">
+            <Link href="/qna/list/예술">
               <a ref={menuRef}>예술</a>
             </Link>
           </li>
