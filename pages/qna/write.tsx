@@ -25,8 +25,8 @@ const AddPost = () => {
   return (
     <div>
       <BgTitle>질문 등록하기</BgTitle>
-      <div className="border shadow-xl rounded-lg p-[20px] flex flex-col gap-[10px]">
-        <div className="flex text-center">
+      <div className="border max-w-[680px] m-auto shadow-xl rounded-lg p-[20px] flex flex-col gap-[10px]">
+        <div className="flex text-center ">
           <p className="text-white bg-primary h-[45px] w-[130px] leading-[25px] rounded-tl-lg rounded-bl-lg p-[10px]">
             계열
           </p>
@@ -72,10 +72,10 @@ const AddPost = () => {
             내용
           </p>
           <div className="w-[calc(100%-130px)] h-[550px]">
-            <WysiwygEditor />
+            <WysiwygEditor cssStyle="h-[500px]" />
           </div>
         </div>
-        <div className="flex justify-end pt-[10px]">
+        <div className="flex justify-end pt-[20px]">
           <button className="bg-primary text-white font-bold rounded-full w-[106px] h-[56px]">
             완료
           </button>

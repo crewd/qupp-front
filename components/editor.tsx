@@ -2,7 +2,7 @@ import React from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
-const QuillEditor = () => {
+const QuillEditor = ({ cssStyle }: { cssStyle: string }) => {
   const toolbarOptions = [
     [{ header: [1, 2, 3, false] }],
     ['bold', 'italic', 'underline', 'strike'],
@@ -39,9 +39,11 @@ const QuillEditor = () => {
     },
   };
 
+  const styles = cssStyle;
+
   return (
     <ReactQuill
-      className="h-[500px]"
+      className={styles}
       theme="snow"
       modules={modules}
       formats={formats}
