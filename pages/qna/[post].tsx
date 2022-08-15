@@ -59,7 +59,7 @@ const Post = () => {
         </div>
       </div>
 
-      <div className="pt-[30px] mt-[30px] border-t border-gray-2">
+      <div className="pt-[30px] mt-[50px] border-t-2 border-primary">
         <p className="text-lg font-bold text-primary pb-[20px]">
           답변 작성하기
         </p>
