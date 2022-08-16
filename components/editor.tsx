@@ -47,6 +47,7 @@ const QuillEditor = ({ cssStyle }: { cssStyle: string }) => {
       theme="snow"
       modules={modules}
       formats={formats}
+      placeholder="내용을 입력해주세요"
     />
   );
 };
