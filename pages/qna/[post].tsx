@@ -43,7 +43,7 @@ const Post = () => {
               <p>{data.obj.title}</p>
             </div>
             <div className="w-full mt-[20px]">
-              <div className="w-full bg-gray-5 h-[300px]" />
+              <div className="w-full bg-gray-5 h-[500px]" />
               <br />
               <p>이 문제는 어떻게 푸는 건가요?</p>
             </div>
