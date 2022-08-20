@@ -14,7 +14,7 @@ const BgTitle = ({ children }: { children: React.ReactNode }) => {
           />
         </a>
       </Link>
-      <h2 className="text-regular font-bold w-[calc(100%-80px)] select-none text-white border-l text-center border-white pl-[20px]">
+      <h2 className="text-regular font-bold w-[calc(100%-80px)] leading-[50px] select-none text-white border-l text-center border-white pl-[20px]">
         {children}
       </h2>
     </div>
