@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useRef } from 'react';
 import BgTitle from '../../../components/common/bgTitle';
+import PostCard from '../../../components/post/postCard';
 
 const QnA = () => {
   const router = useRouter();
@@ -110,11 +111,11 @@ const QnA = () => {
         </div>
         <div>
           <div>
-            <div className="grid w-full grid-cols-10 font-bold text-secondary-sBlue bg-primary/10 border-y border-secondary-sBlue">
+            <div className="grid w-full grid-cols-7 font-bold text-secondary-sBlue bg-primary/10 border-y border-secondary-sBlue">
               <p className="p-[20px] border-r border-secondary-sBlue text-center">
                 계열
               </p>
-              <p className="p-[20px] border-r col-span-6 border-secondary-sBlue text-center">
+              <p className="p-[20px] border-r col-span-4 border-secondary-sBlue text-center">
                 제목
               </p>
               <p className="p-[20px] border-r border-secondary-sBlue text-center">
@@ -123,53 +124,13 @@ const QnA = () => {
               <p className="p-[20px] border-r border-secondary-sBlue text-center">
                 날짜
               </p>
-              <p className="p-[20px] text-center">조회수</p>
             </div>
-            <div className="grid w-full grid-cols-10 border-b border-primary">
-              <p className="p-[20px] border-r border-primary text-center">
-                인문
-              </p>
-              <p className="p-[20px] col-span-6 border-r border-primary">
-                이 문제는 어떻게 푸나요?
-              </p>
-              <p className="p-[20px] border-r border-primary text-center">
-                작성자
-              </p>
-              <p className="py-[20px] text-center border-r border-primary">
-                2022/08/17
-              </p>
-              <p className="p-[20px] text-center">325</p>
-            </div>
-            <div className="grid w-full grid-cols-10 border-b border-primary">
-              <p className="p-[20px] border-r border-primary text-center">
-                인문
-              </p>
-              <p className="p-[20px] col-span-6 border-r border-primary">
-                이 문제는 어떻게 푸나요?
-              </p>
-              <p className="p-[20px] border-r border-primary text-center">
-                작성자
-              </p>
-              <p className="py-[20px] text-center border-r border-primary">
-                2022/08/17
-              </p>
-              <p className="p-[20px] text-center">325</p>
-            </div>
-            <div className="grid w-full grid-cols-10 border-b border-primary">
-              <p className="p-[20px] border-r border-primary text-center">
-                인문
-              </p>
-              <p className="p-[20px] col-span-6 border-r border-primary">
-                이 문제는 어떻게 푸나요?
-              </p>
-              <p className="p-[20px] border-r border-primary text-center">
-                작성자
-              </p>
-              <p className="py-[20px] text-center border-r border-primary">
-                2022/08/17
-              </p>
-              <p className="p-[20px] text-center">325</p>
-            </div>
+            <PostCard
+              category="인문"
+              title="이 문제는 어떻게 푸나요?"
+              writer="작성자"
+              date="2022/08/22"
+            />
           </div>
         </div>
       </div>
