@@ -8,17 +8,21 @@ import PostCard from '../../../components/post/postCard';
 
 const QnA = () => {
   const router = useRouter();
-  const { name } = router.query;
+  const category = router.query.category;
 
   const menuRef = useRef<HTMLAnchorElement>(null);
 
   useEffect(() => {
     const element = menuRef.current;
 
-    if (element && element.innerHTML === name) {
+    if (!category) {
+      router.push('?category=인문');
+    }
+
+    if (element && element.innerHTML === category) {
       element.scrollIntoView();
     }
-  }, [name]);
+  }, [category]);
 
   return (
     <div className="max-w-[1280px] m-auto">
@@ -33,67 +37,67 @@ const QnA = () => {
           <ul className="flex justify-around m-auto text-lg font-bold">
             <li
               className={`${
-                name === '인문'
+                category === '인문'
                   ? 'text-primary border-b-[3px] border-primary'
                   : 'text-gray-3 hover:border-b-[3px] hover:border-primary hover:text-primary'
               }`}
             >
-              <Link href="/qna/list/인문">
+              <Link href="?category=인문">
                 <a ref={menuRef}>인문</a>
               </Link>
             </li>
             <li
               className={`${
-                name === '사회'
+                category === '사회'
                   ? 'text-primary border-b-[3px] border-primary'
                   : 'text-gray-3 hover:border-b-[3px] hover:border-primary hover:text-primary'
               }`}
             >
-              <Link href="/qna/list/사회">
+              <Link href="?category=사회">
                 <a ref={menuRef}>사회</a>
               </Link>
             </li>
             <li
               className={`${
-                name === '상경'
+                category === '상경'
                   ? 'text-primary border-b-[3px] border-primary'
                   : 'text-gray-3 hover:border-b-[3px] hover:border-primary hover:text-primary'
               }`}
             >
-              <Link href="/qna/list/상경">
+              <Link href="?category=상경">
                 <a ref={menuRef}>상경</a>
               </Link>
             </li>
             <li
               className={`${
-                name === '자연과학'
+                category === '자연과학'
                   ? 'text-primary border-b-[3px] border-primary'
                   : 'text-gray-3 hover:border-b-[3px] hover:border-primary hover:text-primary'
               }`}
             >
-              <Link href="/qna/list/자연과학">
+              <Link href="?category=자연과학">
                 <a ref={menuRef}>자연과학</a>
               </Link>
             </li>
             <li
               className={`${
-                name === '공학'
+                category === '공학'
                   ? 'text-primary border-b-[3px] border-primary'
                   : 'text-gray-3 hover:border-b-[3px] hover:border-primary hover:text-primary'
               }`}
             >
-              <Link href="/qna/list/공학">
+              <Link href="?category=공학">
                 <a ref={menuRef}>공학</a>
               </Link>
             </li>
             <li
               className={`${
-                name === '예술'
+                category === '예술'
                   ? 'text-primary border-b-[3px] border-primary'
                   : 'text-gray-3 hover:border-b-[3px] hover:border-primary hover:text-primary'
               }`}
             >
-              <Link href="/qna/list/예술">
+              <Link href="?category=예술">
                 <a ref={menuRef}>예술</a>
               </Link>
             </li>
@@ -125,12 +129,14 @@ const QnA = () => {
                 날짜
               </p>
             </div>
-            <PostCard
-              category="인문"
-              title="이 문제는 어떻게 푸나요?"
-              writer="작성자"
-              date="2022/08/22"
-            />
+            {category && (
+              <PostCard
+                category={category.toString()}
+                title="이 문제는 어떻게 푸나요?"
+                writer="작성자"
+                date="2022/08/22"
+              />
+            )}
           </div>
         </div>
       </div>
