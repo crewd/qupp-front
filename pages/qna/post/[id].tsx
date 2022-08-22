@@ -1,7 +1,8 @@
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import BgTitle from '../../components/common/bgTitle';
+import AnswerCard from '../../../components/answer/answerCard';
+import BgTitle from '../../../components/common/bgTitle';
 
 const data = {
   msg: 'string',
@@ -14,12 +15,11 @@ const data = {
   },
 };
 
-const WysiwygEditor = dynamic(() => import('../../components/editor'), {
+const WysiwygEditor = dynamic(() => import('../../../components/editor'), {
   ssr: false,
 });
 
 const Post = () => {
-  const router = useRouter();
   return (
     <div>
       <Head>
@@ -32,13 +32,8 @@ const Post = () => {
           <div className="w-full border shadow-xl rounded-3xl p-[30px] bg-white">
             <h2 className="w-full text-lg font-bold text-primary">질문</h2>
             <div className="py-[20px]">
-              <p className="text-[14px] text-gray-1 leading-[24px]">글작성자</p>
-              <p className="text-sm text-gray-5">
-                {new Date(+new Date() + 3240 * 10000)
-                  .toISOString()
-                  .replace('T', ' ')
-                  .replace(/\..*/, '')}
-              </p>
+              <p className="text-[14px] leading-[24px]">글작성자</p>
+              <p className="text-sm text-gray-5">2022/08/22</p>
             </div>
             <div className="flex items-center pb-[10px] border-b border-primary">
               <p className="border border-primary w-[60px] text-center">계열</p>
@@ -48,11 +43,18 @@ const Post = () => {
               <p>{data.obj.title}</p>
             </div>
             <div className="w-full mt-[20px]">
-              <div className="w-full bg-gray-5 h-[500px]" />
+              <div className="w-[500px] bg-gray-5 h-[300px]" />
               <br />
               <p>이 문제는 어떻게 푸는 건가요?</p>
             </div>
           </div>
+        </div>
+
+        <div className="mt-[50px]">
+          <p className="text-md pb-[15px]">
+            <span className="font-bold">1</span>개의 답변이 있습니다
+          </p>
+          <AnswerCard />
         </div>
 
         <div className="pt-[30px] mt-[50px] border-t-2 border-primary">

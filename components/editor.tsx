@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ReactQuill, { Quill } from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { ImageResize } from 'quill-image-resize-module-ts';
@@ -6,8 +6,6 @@ import { ImageResize } from 'quill-image-resize-module-ts';
 Quill.register('modules/ImageResize', ImageResize);
 
 const QuillEditor = ({ cssStyle }: { cssStyle: string }) => {
-  const [value, setValue] = useState('');
-
   const toolbarOptions = [
     [{ header: [1, 2, 3, false] }],
     ['bold', 'italic', 'underline', 'strike'],
@@ -57,7 +55,6 @@ const QuillEditor = ({ cssStyle }: { cssStyle: string }) => {
       modules={modules}
       formats={formats}
       placeholder="내용을 입력해주세요"
-      onChange={(e) => setValue(e)}
     />
   );
 };

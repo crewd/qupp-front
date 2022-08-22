@@ -19,7 +19,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 </a>
               </Link>
             </button>
-            <button className="lg:w-[90px] w-[60px] lg:h-[40px] h-[30px] ml-[20px] rounded-3xl text-gray-1">
+            <button className="lg:w-[90px] w-[60px] lg:h-[40px] h-[30px] ml-[20px] rounded-3xl">
               <Link href="/signup">
                 <a className="block lg:h-[40px] h-[30px] lg:leading-[40px] leading-[30px]">
                   회원가입

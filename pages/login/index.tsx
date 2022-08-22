@@ -12,7 +12,7 @@ const LoginPage = () => {
       <div className="sm:p-[60px] px-[20px] py-[60px] sm:bg-primary/10">
         <div className="sm:w-[400px] w-full sm:px-[30px] sm:py-[40px] bg-white m-auto flex justify-center flex-col sm:border sm:shadow-xl sm:rounded-3xl">
           <div className="w-full flex flex-col gap-[40px] items-center">
-            <div className="flex w-full text-gray-1">
+            <div className="flex w-full">
               <p className="leading-[42px] w-[90px] pr-[10px] font-bold">
                 이메일
               </p>
@@ -22,7 +22,7 @@ const LoginPage = () => {
                 placeholder="이메일"
               />
             </div>
-            <div className="flex w-full text-gray-1">
+            <div className="flex w-full">
               <p className="leading-[42px] w-[90px] pr-[10px] font-bold">
                 비밀번호
               </p>
