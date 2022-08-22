@@ -38,8 +38,6 @@ const QuillEditor = ({ cssStyle }: { cssStyle: string }) => {
     'width',
   ];
 
-  console.log(value);
-
   const modules = {
     toolbar: {
       container: toolbarOptions,
