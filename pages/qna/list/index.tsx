@@ -1,5 +1,6 @@
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useRef } from 'react';
@@ -26,6 +27,10 @@ const QnA = () => {
 
   return (
     <div className="max-w-[1280px] m-auto">
+      <Head>
+        <title>{category} 카테고리 | Qupp</title>
+        <meta name="description" content={`Qupp ${category} 카테고리`} />
+      </Head>
       <BgTitle>게시판</BgTitle>
       <div className="mt-[60px]">
         <header className="border-b-[3px] border-primary pb-[15px]">

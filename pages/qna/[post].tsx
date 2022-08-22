@@ -1,4 +1,5 @@
 import dynamic from 'next/dynamic';
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import BgTitle from '../../components/common/bgTitle';
 
@@ -21,6 +22,10 @@ const Post = () => {
   const router = useRouter();
   return (
     <div>
+      <Head>
+        <title>게시글</title>
+        <meta name="description" content="게시글" />
+      </Head>
       <BgTitle>질문</BgTitle>
       <div className="py-[60px]">
         <div className="flex justify-center w-full">

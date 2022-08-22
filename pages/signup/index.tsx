@@ -5,8 +5,8 @@ const SignUpPage = () => {
   return (
     <div>
       <Head>
-        <title>회원가입</title>
-        <meta name="description" content="회원가입" />
+        <title>회원가입 | Qupp</title>
+        <meta name="description" content="Qupp 회원가입" />
       </Head>
       <BgTitle>회원가입</BgTitle>
       <div className="sm:p-[60px] px-[20px] py-[60px] md:bg-primary/10">

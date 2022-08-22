@@ -1,6 +1,7 @@
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import dynamic from 'next/dynamic';
+import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import BgTitle from '../../components/common/bgTitle';
 
@@ -24,6 +25,10 @@ const AddPost = () => {
 
   return (
     <div>
+      <Head>
+        <title>질문 등록</title>
+        <meta name="description" content="질문 등록" />
+      </Head>
       <BgTitle>질문 등록</BgTitle>
       <div className="py-[60px] bg-primary/10">
         <div className="md:border w-[1100px] m-auto md:shadow-xl md:rounded-3xl md:p-[20px] bg-white flex flex-col gap-[10px]">
