@@ -9,7 +9,7 @@ const SignUpPage = () => {
         <meta name="description" content="Qupp 회원가입" />
       </Head>
       <BgTitle>회원가입</BgTitle>
-      <div className="sm:p-[60px] px-[20px] py-[60px] md:bg-primary/10">
+      <div className="sm:p-[60px] px-[20px] py-[60px] sm:bg-primary/10">
         <div className="sm:w-[400px] w-full sm:px-[30px] sm:py-[40px] bg-white m-auto flex justify-center flex-col sm:border sm:shadow-xl sm:rounded-3xl">
           <div className="w-full flex flex-col gap-[40px]">
             <div className="flex justify-between w-full">
