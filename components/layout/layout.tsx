@@ -13,12 +13,12 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           </Link>
           <nav className="flex justify-between w-full">
             <div className="flex ml-[40px] font-bold">
-              <Link href="/login">
+              <Link href="/qna/list">
                 <a className="lg:h-[40px] h-[30px] lg:leading-[40px] leading-[30px] hover:text-primary">
                   게시판
                 </a>
               </Link>
-              <Link href="/login">
+              <Link href="/qna/write">
                 <a className="ml-[40px] lg:h-[40px] h-[30px] lg:leading-[40px] leading-[30px] hover:text-primary">
                   글 작성하기
                 </a>
