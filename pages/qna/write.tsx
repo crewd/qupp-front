@@ -72,10 +72,10 @@ const AddPost = () => {
               placeholder="제목"
             />
           </div>
-          <div className="w-full h-[550px]">
+          <div className="w-full h-[550px] mb-[40px]">
             <WysiwygEditor cssStyle="w-full h-[500px]" />
           </div>
-          <div className="flex justify-end py-[20px]">
+          <div className="flex justify-end mb-[10px]">
             <button className="bg-primary text-white font-bold rounded-full w-[106px] h-[56px]">
               완료
             </button>
