@@ -108,18 +108,26 @@ const QnA = () => {
           </ul>
         </nav>
         <div className="lg:w-[768px] w-full mx-auto">
-          <PostCard
-            category={`${category ? category : '인문'}`}
-            title="이 문제는 어떻게 푸나요?"
-            writer="작성자"
-            date="2022/08/24"
-          />
-          <PostCard
-            category="자연과학"
-            title="이 문제는 어떻게 푸나요?"
-            writer="작성자"
-            date="2022/08/24"
-          />
+          <Link href="/qna/post/1">
+            <a>
+              <PostCard
+                category={`${category ? category : '인문'}`}
+                title="이 문제는 어떻게 푸나요?"
+                writer="작성자"
+                date="2022/08/24"
+              />
+            </a>
+          </Link>
+          <Link href="/qna/post/1">
+            <a>
+              <PostCard
+                category={`${category ? category : '인문'}`}
+                title="이 문제는 어떻게 푸나요?"
+                writer="작성자"
+                date="2022/08/24"
+              />
+            </a>
+          </Link>
         </div>
       </div>
     </div>
