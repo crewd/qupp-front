@@ -26,7 +26,7 @@ const AddPost = () => {
   return (
     <div>
       <Head>
-        <title>질문 등록</title>
+        <title>질문 등록 | Qupp</title>
         <meta name="description" content="질문 등록" />
       </Head>
       <BgTitle>질문 등록</BgTitle>

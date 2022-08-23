@@ -23,7 +23,7 @@ const Post = () => {
   return (
     <div>
       <Head>
-        <title>게시글</title>
+        <title>이 문제는 어떻게 푸나요? | Qupp</title>
         <meta name="description" content="게시글" />
       </Head>
       <BgTitle>질문</BgTitle>
