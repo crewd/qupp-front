@@ -42,7 +42,7 @@ const QnA = () => {
             <li className="py-[10px] hover:font-bold hover:text-primary cursor-pointer">
               <Link href="?category=인문">
                 <a
-                  className={`${
+                  className={`w-full block ${
                     category === '인문' && 'text-primary font-bold'
                   }`}
                 >
@@ -53,7 +53,7 @@ const QnA = () => {
             <li className="py-[10px] hover:font-bold hover:text-primary cursor-pointer">
               <Link href="?category=사회">
                 <a
-                  className={`${
+                  className={`w-full block ${
                     category === '사회' && 'text-primary font-bold'
                   }`}
                 >
@@ -64,7 +64,7 @@ const QnA = () => {
             <li className="py-[10px] hover:font-bold hover:text-primary cursor-pointer">
               <Link href="?category=상경">
                 <a
-                  className={`${
+                  className={`w-full block ${
                     category === '상경' && 'text-primary font-bold'
                   }`}
                 >
@@ -75,7 +75,7 @@ const QnA = () => {
             <li className="py-[10px] hover:font-bold hover:text-primary cursor-pointer">
               <Link href="?category=자연과학">
                 <a
-                  className={`${
+                  className={`w-full block ${
                     category === '자연과학' && 'text-primary font-bold'
                   }`}
                 >
@@ -86,7 +86,7 @@ const QnA = () => {
             <li className="py-[10px] hover:font-bold hover:text-primary cursor-pointer">
               <Link href="?category=공학">
                 <a
-                  className={`${
+                  className={`w-full block ${
                     category === '공학' && 'text-primary font-bold'
                   }`}
                 >
@@ -97,7 +97,7 @@ const QnA = () => {
             <li className="py-[10px] hover:font-bold hover:text-primary cursor-pointer">
               <Link href="?category=예술">
                 <a
-                  className={`${
+                  className={`w-full block ${
                     category === '예술' && 'text-primary font-bold'
                   }`}
                 >
