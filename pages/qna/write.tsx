@@ -30,8 +30,8 @@ const AddPost = () => {
         <meta name="description" content="질문 등록" />
       </Head>
       <BgTitle>질문 등록</BgTitle>
-      <div className="py-[60px] bg-primary/10">
-        <div className="md:border w-[1100px] m-auto md:shadow-xl md:rounded-3xl md:p-[20px] bg-white flex flex-col gap-[10px]">
+      <div className="md:py-[60px] py-[20px] md:bg-primary/10">
+        <div className="md:border max-w-[1100px] m-auto md:shadow-xl md:rounded-3xl md:p-[20px] bg-white flex flex-col gap-[10px]">
           <div className="relative">
             <div className="px-[10px] py-[10px] w-[130px] h-[45px] border-b border-primary">
               <button
@@ -73,9 +73,9 @@ const AddPost = () => {
             />
           </div>
           <div className="w-full h-[550px]">
-            <WysiwygEditor cssStyle="h-[500px]" />
+            <WysiwygEditor cssStyle="w-full h-[500px]" />
           </div>
-          <div className="flex justify-end pt-[20px]">
+          <div className="flex justify-end py-[20px]">
             <button className="bg-primary text-white font-bold rounded-full w-[106px] h-[56px]">
               완료
             </button>
