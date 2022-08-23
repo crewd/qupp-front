@@ -1,3 +1,9 @@
+type Answer = {
+  content: string;
+  writer: string;
+  date: string;
+};
+
 const AnswerCard = () => {
   return (
     <div className="p-[20px] border rounded-xl shadow-xl">

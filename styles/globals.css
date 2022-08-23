@@ -7,5 +7,6 @@
     @apply font-sans;
     @apply text-regular;
     @apply text-gray-1;
+    @apply overflow-y-scroll;
   }
 }
