@@ -1,12 +1,9 @@
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useRef } from 'react';
 import BgTitle from '../../../components/common/bgTitle';
 import PostCard from '../../../components/post/postCard';
-import Post from '../post/[id]';
 
 const QnA = () => {
   const router = useRouter();
@@ -33,12 +30,12 @@ const QnA = () => {
         <meta name="description" content={`Qupp ${category} 카테고리`} />
       </Head>
       <BgTitle>게시판</BgTitle>
-      <div className="mt-[60px] flex">
-        <nav className="w-[150px] lg:block hidden">
-          <h2 className="text-lg font-bold text-primary pb-[10px] border-b-4 border-primary">
+      <div className="flex mt-[60px]">
+        <nav className="w-[360px] lg:block hidden p-[20px] border shadow-lg rounded-xl">
+          <h2 className="text-md font-bold text-primary pb-[10px] border-b-4 border-primary">
             카테고리
           </h2>
-          <ul>
+          <ul className="text-regular">
             <li className="py-[10px] hover:font-bold hover:text-primary cursor-pointer">
               <Link href="?category=인문">
                 <a
@@ -107,7 +104,7 @@ const QnA = () => {
             </li>
           </ul>
         </nav>
-        <div className="lg:w-[768px] w-full mx-auto">
+        <div className="w-full lg:px-[60px] lg:mx-auto px-0 mx-auto">
           <Link href="/qna/post/1">
             <a>
               <PostCard

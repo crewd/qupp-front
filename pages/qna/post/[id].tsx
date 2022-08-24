@@ -1,6 +1,5 @@
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
-import { useRouter } from 'next/router';
 import AnswerCard from '../../../components/answer/answerCard';
 import BgTitle from '../../../components/common/bgTitle';
 
