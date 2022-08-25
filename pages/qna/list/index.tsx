@@ -2,10 +2,12 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useRef } from 'react';
+import { getQuestionList } from '../../../api';
 import BgTitle from '../../../components/common/bgTitle';
 import PostCard from '../../../components/post/postCard';
+import { Questions } from '../../../types/QnA';
 
-const QnA = () => {
+const QnA = ({ questions }: { questions: Questions }) => {
   const router = useRouter();
   const category = router.query.category;
 
@@ -130,5 +132,14 @@ const QnA = () => {
     </div>
   );
 };
+
+export async function getStaticProps() {
+  const questions = await getQuestionList();
+  return {
+    props: {
+      questions,
+    },
+  };
+}
 
 export default QnA;
