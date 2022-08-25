@@ -104,29 +104,53 @@ const QnA = ({ questions }: { questions: Questions }) => {
                 </a>
               </Link>
             </li>
+            <li className="py-[10px] hover:font-bold hover:text-primary cursor-pointer">
+              <Link href="?category=없음">
+                <a
+                  className={`w-full block ${
+                    category === '없음' && 'text-primary font-bold'
+                  }`}
+                >
+                  게시글 없음
+                </a>
+              </Link>
+            </li>
           </ul>
         </nav>
         <div className="w-full lg:px-[60px] lg:mx-auto px-0 mx-auto">
-          <Link href="/qna/post/1">
-            <a>
-              <PostCard
-                category={`${category ? category : '인문'}`}
-                title="이 문제는 어떻게 푸나요?"
-                writer="작성자"
-                date="2022/08/24"
-              />
-            </a>
-          </Link>
-          <Link href="/qna/post/1">
-            <a>
-              <PostCard
-                category={`${category ? category : '인문'}`}
-                title="이 문제는 어떻게 푸나요?"
-                writer="작성자"
-                date="2022/08/24"
-              />
-            </a>
-          </Link>
+          {category !== '없음' ? (
+            <>
+              <Link href="/qna/post/1">
+                <a>
+                  <PostCard
+                    category={`${category ? category : '인문'}`}
+                    title="이 문제는 어떻게 푸나요?"
+                    writer="작성자"
+                    date="2022/08/24"
+                  />
+                </a>
+              </Link>
+              <Link href="/qna/post/1">
+                <a>
+                  <PostCard
+                    category={`${category ? category : '인문'}`}
+                    title="이 문제는 어떻게 푸나요?"
+                    writer="작성자"
+                    date="2022/08/24"
+                  />
+                </a>
+              </Link>
+            </>
+          ) : (
+            <div className="">
+              <p className="text-lg font-bold text-center">
+                등록된 질문이 없습니다
+              </p>
+              <p className="mt-[20px] text-center text-gray-4">
+                첫 번째로 질문을 등록해보세요!
+              </p>
+            </div>
+          )}
         </div>
       </div>
     </div>
