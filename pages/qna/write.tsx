@@ -31,7 +31,7 @@ const AddPost = () => {
       </Head>
       <BgTitle>질문 등록</BgTitle>
       <div className="lg:py-[60px] py-[20px] lg:bg-primary/10">
-        <div className="lg:border max-w-[1100px] m-auto lg:shadow-xl lg:rounded-3xl lg:p-[20px] bg-white flex flex-col gap-[10px]">
+        <div className="lg:border max-w-[1100px] m-auto lg:shadow-xl lg:rounded-3xl lg:p-[20px]  flex flex-col gap-[10px]">
           <div className="relative">
             <div className="px-[10px] py-[10px] w-[130px] h-[45px] border-b border-primary">
               <button
@@ -51,7 +51,7 @@ const AddPost = () => {
                 />
               </button>
               {selectOpened && (
-                <ul className="absolute top-[100%] left-0 bg-white w-[130px] border border-primary border-t-0 rounded-b-lg shadow-lg z-20">
+                <ul className="absolute top-[100%] left-0  w-[130px] border border-primary border-t-0 rounded-b-lg shadow-lg z-10">
                   {category.map((data) => (
                     <li
                       key={data}
