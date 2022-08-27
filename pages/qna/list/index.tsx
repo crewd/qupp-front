@@ -1,3 +1,4 @@
+import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -118,8 +119,15 @@ const QnA = ({ questions }: { questions: Questions }) => {
           </ul>
         </nav>
         <div className="w-full lg:px-[60px] lg:mx-auto px-0 mx-auto">
+          <div className="pb-[20px] flex justify-end">
+            <Link href="/qna/write">
+              <a className="text-white p-[8px] rounded-lg bg-primary hover:bg-primary/70">
+                질문 하기
+              </a>
+            </Link>
+          </div>
           {category !== '없음' ? (
-            <>
+            <div>
               <Link href="/qna/post/1">
                 <a>
                   <PostCard
@@ -140,7 +148,7 @@ const QnA = ({ questions }: { questions: Questions }) => {
                   />
                 </a>
               </Link>
-            </>
+            </div>
           ) : (
             <div className="">
               <p className="text-lg font-bold text-center">
@@ -157,13 +165,13 @@ const QnA = ({ questions }: { questions: Questions }) => {
   );
 };
 
-export async function getStaticProps() {
+export const getServerSideProps: GetServerSideProps = async (context) => {
   const questions = await getQuestionList();
   return {
     props: {
       questions,
     },
   };
-}
+};
 
 export default QnA;
