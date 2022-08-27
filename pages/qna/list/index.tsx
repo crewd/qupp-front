@@ -29,7 +29,7 @@ const QnA = ({ questions }: { questions: Questions }) => {
   return (
     <div className="max-w-[1280px] m-auto relative">
       <Head>
-        <title>{category} 카테고리 | Qupp</title>
+        <title>{`${category} 카테고리 | Qupp`}</title>
         <meta name="description" content={`Qupp ${category} 카테고리`} />
       </Head>
       <BgTitle>게시판</BgTitle>
