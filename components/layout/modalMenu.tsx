@@ -1,10 +1,11 @@
-import { faBars, faX } from '@fortawesome/free-solid-svg-icons';
+import { faAngleDown, faBars, faX } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 
 const ModalNavMenu = () => {
   const [menuOpened, setMenuOpened] = useState(false);
-  const menuRef = useRef<HTMLElement>(null);
+  const [categoryOpened, setCategoryOpened] = useState(false);
 
   const menuHandler = () => {
     setMenuOpened(!menuOpened);
@@ -23,6 +24,7 @@ const ModalNavMenu = () => {
         window.scrollTo(0, parseInt(scrollY || '0', 10) * -1);
       };
     }
+    setCategoryOpened(false);
   }, [menuOpened]);
 
   return (
@@ -39,17 +41,81 @@ const ModalNavMenu = () => {
       <nav
         className={`fixed top-0 bg-white ${
           !menuOpened ? 'right-[-320px] opacity-0' : 'right-0 bg-white'
-        }  sm:w-[320px] w-[260px] h-screen p-[20px] z-50 duration-500`}
-        ref={menuRef}
+        }  sm:w-[320px] w-[280px] h-screen p-[20px] z-50 duration-500 rounded-tl-xl rounded-bl-xl`}
       >
-        <FontAwesomeIcon
-          className="pb-[10px]"
-          icon={faX}
-          size="lg"
-          onClick={menuHandler}
-        />
-        <div className="py-[10px]">로그인</div>
-        <div className="py-[10px]">회원가입</div>
+        <div className="font-bold p-10px mb-[20px] flex justify-center items-center">
+          <h2 className="text-xl">Qupp</h2>
+          <FontAwesomeIcon
+            className="absolute left-[20px]"
+            icon={faX}
+            size="lg"
+            onClick={menuHandler}
+          />
+        </div>
+        <div className="px-[15px] py-[10px]">로그인</div>
+        <div className="px-[15px] py-[10px]">회원가입</div>
+        <div className="px-[15px] py-[10px]">
+          <div
+            className="relative flex items-center"
+            onClick={() => setCategoryOpened(!categoryOpened)}
+          >
+            <p className="pr-[10px]">카테고리</p>
+            <FontAwesomeIcon className="absolute right-0" icon={faAngleDown} />
+          </div>
+          {categoryOpened && (
+            <ul className="duration-300 px-[10px]">
+              <li
+                className="py-[10px] mt-[10px] hover:text-primary"
+                onClick={menuHandler}
+              >
+                <Link href="/qna/list?category=인문">
+                  <a>인문</a>
+                </Link>
+              </li>
+              <li
+                className="py-[10px] hover:text-primary"
+                onClick={menuHandler}
+              >
+                <Link href="/qna/list?category=사회">
+                  <a>사회</a>
+                </Link>
+              </li>
+              <li
+                className="py-[10px] hover:text-primary"
+                onClick={menuHandler}
+              >
+                <Link href="/qna/list?category=상경">
+                  <a>상경</a>
+                </Link>
+              </li>
+              <li
+                className="py-[10px] hover:text-primary"
+                onClick={menuHandler}
+              >
+                <Link href="/qna/list?category=자연과학">
+                  <a>자연과학</a>
+                </Link>
+              </li>
+              <li
+                className="py-[10px] hover:text-primary"
+                onClick={menuHandler}
+              >
+                <Link href="/qna/list?category=공학">
+                  <a>공학</a>
+                </Link>
+              </li>
+              <li
+                className="py-[10px] hover:text-primary"
+                onClick={menuHandler}
+              >
+                <Link href="/qna/list?category=예술">
+                  <a>예술</a>
+                </Link>
+              </li>
+            </ul>
+          )}
+        </div>
+        <div className="px-[15px] py-[10px]">질문 하기</div>
       </nav>
     </div>
   );
