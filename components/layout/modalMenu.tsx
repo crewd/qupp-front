@@ -52,8 +52,16 @@ const ModalNavMenu = () => {
             onClick={menuHandler}
           />
         </div>
-        <div className="px-[15px] py-[10px]">로그인</div>
-        <div className="px-[15px] py-[10px]">회원가입</div>
+        <div className="px-[15px] py-[10px]" onClick={menuHandler}>
+          <Link href="/login">
+            <a className="block">로그인</a>
+          </Link>
+        </div>
+        <div className="px-[15px] py-[10px]" onClick={menuHandler}>
+          <Link href="/signup">
+            <a className="block">회원가입</a>
+          </Link>
+        </div>
         <div className="px-[15px] py-[10px]">
           <div
             className="relative flex items-center"
@@ -69,7 +77,7 @@ const ModalNavMenu = () => {
                 onClick={menuHandler}
               >
                 <Link href="/qna/list?category=인문">
-                  <a>인문</a>
+                  <a className="block">인문</a>
                 </Link>
               </li>
               <li
@@ -77,7 +85,7 @@ const ModalNavMenu = () => {
                 onClick={menuHandler}
               >
                 <Link href="/qna/list?category=사회">
-                  <a>사회</a>
+                  <a className="block">사회</a>
                 </Link>
               </li>
               <li
@@ -85,7 +93,7 @@ const ModalNavMenu = () => {
                 onClick={menuHandler}
               >
                 <Link href="/qna/list?category=상경">
-                  <a>상경</a>
+                  <a className="block">상경</a>
                 </Link>
               </li>
               <li
@@ -93,7 +101,7 @@ const ModalNavMenu = () => {
                 onClick={menuHandler}
               >
                 <Link href="/qna/list?category=자연과학">
-                  <a>자연과학</a>
+                  <a className="block">자연과학</a>
                 </Link>
               </li>
               <li
@@ -101,7 +109,7 @@ const ModalNavMenu = () => {
                 onClick={menuHandler}
               >
                 <Link href="/qna/list?category=공학">
-                  <a>공학</a>
+                  <a className="block">공학</a>
                 </Link>
               </li>
               <li
@@ -109,13 +117,17 @@ const ModalNavMenu = () => {
                 onClick={menuHandler}
               >
                 <Link href="/qna/list?category=예술">
-                  <a>예술</a>
+                  <a className="block">예술</a>
                 </Link>
               </li>
             </ul>
           )}
         </div>
-        <div className="px-[15px] py-[10px]">질문 하기</div>
+        <div className="px-[15px] py-[10px]" onClick={menuHandler}>
+          <Link href="/qna/write">
+            <a className="block">질문 하기</a>
+          </Link>
+        </div>
       </nav>
     </div>
   );
