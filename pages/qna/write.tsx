@@ -55,7 +55,7 @@ const AddPost = () => {
                   {category.map((data) => (
                     <li
                       key={data}
-                      className="px-[10px] py-[10px] hover:bg-gray-100 cursor-pointer"
+                      className="px-[10px] py-[10px] hover:bg-gray-100 cursor-pointer bg-white"
                       onClick={() => selectCategory(data)}
                     >
                       {data}
