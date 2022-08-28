@@ -31,7 +31,7 @@ const AddPost = () => {
       </Head>
       <BgTitle>질문 등록</BgTitle>
       <div className="lg:py-[60px] py-[20px] lg:bg-primary/10">
-        <div className="lg:border max-w-[1100px] m-auto lg:shadow-xl lg:rounded-3xl lg:p-[20px]  flex flex-col gap-[10px]">
+        <div className="lg:border max-w-[1100px] m-auto lg:shadow-xl lg:rounded-3xl lg:p-[20px]  flex flex-col gap-[10px] bg-white">
           <div className="relative">
             <div className="px-[10px] py-[10px] w-[130px] h-[45px] border-b border-primary">
               <button
