@@ -1,5 +1,8 @@
+import { GetServerSideProps } from 'next';
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
+import { getQuestionDetail } from '../../../api';
 import AnswerCard from '../../../components/answer/answerCard';
 import BgTitle from '../../../components/common/bgTitle';
 
@@ -42,7 +45,7 @@ const Post = () => {
               <p>{data.obj.title}</p>
             </div>
             <div className="w-full mt-[20px]">
-              <div className="w-[500px] bg-gray-5 h-[300px]" />
+              <div className="w-full max-w-[500px] bg-gray-5 h-[300px]" />
               <br />
               <p>이 문제는 어떻게 푸는 건가요?</p>
             </div>
@@ -60,10 +63,10 @@ const Post = () => {
           <p className="text-lg font-bold text-primary pb-[20px]">
             답변 작성하기
           </p>
-          <div className="pb-[20px]">
+          <div className="pb-[20px] sm:h-[250px] h-[280px]">
             <WysiwygEditor cssStyle="w-full h-[180px]" />
           </div>
-          <div className="flex justify-end pt-[40px]">
+          <div className="flex justify-end">
             <button className="bg-primary text-white font-bold rounded-full w-[106px] h-[56px]">
               완료
             </button>
@@ -73,5 +76,17 @@ const Post = () => {
     </div>
   );
 };
+
+// export const getServerSideProps: GetServerSideProps = async (context) => {
+//   const router = useRouter();
+//   const id = router.query.id;
+
+//   const questionDetail = await getQuestionDetail(id!.toString());
+//   return {
+//     props: {
+//       questionDetail,
+//     },
+//   };
+// };
 
 export default Post;

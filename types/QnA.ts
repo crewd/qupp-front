@@ -27,6 +27,11 @@ type Answer = {
   };
 };
 
+export type AnswerRegistration = {
+  author: string;
+  content: string;
+};
+
 export type Questions = {
   msg: string;
   obj: Question[];
