@@ -3,8 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import React, { useEffect, useState } from 'react';
-import { useForm } from 'react-hook-form';
-import { ErrorMessage } from '@hookform/error-message';
 import BgTitle from '../../components/common/bgTitle';
 
 const WysiwygEditor = dynamic(() => import('../../components/editor'), {
@@ -24,12 +22,6 @@ const AddPost = () => {
   const [contentsError, setContentsError] = useState(false);
 
   const [selectOpened, setSelectOpened] = useState(false);
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
 
   const selectCategory = (category: string) => {
     setSelectTopic(category);
@@ -140,7 +132,6 @@ const AddPost = () => {
               </p>
             )}
             <input
-              {...register('title', { required: true })}
               className="w-full border-b outline-none border-primary px-[10px] py-[10px]"
               type="text"
               placeholder="제목"
