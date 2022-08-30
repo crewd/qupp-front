@@ -17,20 +17,24 @@ const AddPost = () => {
   const [title, setTitle] = useState('');
   const [contents, setContents] = useState<string | null>('');
 
+  // 카테고리, 제목, 내용 에러
   const [topicError, setTopicError] = useState(false);
   const [titleError, setTitleError] = useState(false);
   const [contentsError, setContentsError] = useState(false);
 
+  // 카테고리 select
   const [selectOpened, setSelectOpened] = useState(false);
 
   const selectCategory = (category: string) => {
     setSelectTopic(category);
   };
 
+  // 제목 onChange 핸들러
   const titleHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTitle(e.target.value);
   };
 
+  // submit 핸들러
   const onSubmit = (data: any) => {
     if (selectTopic === '계열') {
       return setTopicError(true);
@@ -55,8 +59,7 @@ const AddPost = () => {
     console.log(post);
   };
 
-  console.log(contents);
-
+  // 에러 핸들링
   useEffect(() => {
     setSelectOpened(false);
   }, [selectTopic]);
