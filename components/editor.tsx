@@ -5,7 +5,13 @@ import { ImageResize } from 'quill-image-resize-module-ts';
 
 Quill.register('modules/ImageResize', ImageResize);
 
-const QuillEditor = ({ cssStyle }: { cssStyle: string }) => {
+const QuillEditor = ({
+  cssStyle,
+  getContents,
+}: {
+  cssStyle: string;
+  getContents: React.Dispatch<React.SetStateAction<string | null>>;
+}) => {
   const toolbarOptions = [
     [{ header: [1, 2, 3, false] }],
     ['bold', 'italic', 'underline', 'strike'],
@@ -55,6 +61,7 @@ const QuillEditor = ({ cssStyle }: { cssStyle: string }) => {
       modules={modules}
       formats={formats}
       placeholder="내용을 입력해주세요"
+      onChange={(value) => getContents(value)}
     />
   );
 };
