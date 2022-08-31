@@ -2,6 +2,8 @@ import { GetServerSideProps } from 'next';
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import { useRef, useState } from 'react';
+import ReactQuill from 'react-quill';
 import { getQuestionDetail } from '../../../api';
 import AnswerCard from '../../../components/answer/answerCard';
 import BgTitle from '../../../components/common/bgTitle';
@@ -22,6 +24,9 @@ const WysiwygEditor = dynamic(() => import('../../../components/editor'), {
 });
 
 const Post = () => {
+  const [contents, setContents] = useState('');
+  const contentsRef = useRef<ReactQuill>(null);
+
   return (
     <div>
       <Head>
@@ -64,7 +69,11 @@ const Post = () => {
             답변 작성하기
           </p>
           <div className="pb-[20px] sm:h-[250px] h-[280px]">
-            <WysiwygEditor cssStyle="w-full h-[180px]" />
+            <WysiwygEditor
+              cssStyle="w-full h-[180px]"
+              getContents={setContents}
+              refProp={contentsRef}
+            />
           </div>
           <div className="flex justify-end">
             <button className="bg-primary text-white font-bold rounded-full w-[106px] h-[56px]">
