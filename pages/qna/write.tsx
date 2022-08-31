@@ -157,11 +157,6 @@ const AddPost = () => {
                 * 내용을 입력해 주세요!
               </p>
             )}
-            <WysiwygEditor
-              cssStyle="w-full h-[500px]"
-              getContents={setContents}
-              refProp={contentsRef}
-            />
           </div>
           <div className="flex justify-end mb-[10px]">
             <button
