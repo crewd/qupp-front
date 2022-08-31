@@ -41,19 +41,19 @@ const AddPost = () => {
 
   // submit 핸들러
   const onSubmit = () => {
-    if (selectTopic === '계열' && categoryRef.current) {
-      categoryRef.current.focus();
-      return setTopicError(true);
+    if (selectTopic === '계열') {
+      setTopicError(true);
+      return categoryRef.current!.focus();
     }
 
-    if (!title && titleRef.current) {
-      titleRef.current.focus();
-      return setTitleError(true);
+    if (!title) {
+      setTitleError(true);
+      return titleRef.current!.focus();
     }
 
     if (!contents || contents === '<p><br></p>') {
-      contentsRef.current!.focus();
-      return setContentsError(true);
+      setContentsError(true);
+      return contentsRef.current!.focus();
     }
 
     const post = {
@@ -144,7 +144,9 @@ const AddPost = () => {
               </p>
             )}
             <input
-              className="w-full border-b outline-none border-primary px-[10px] py-[10px]"
+              className={`w-full border-b outline-none ${
+                titleError ? 'border-red-500' : 'border-primary'
+              } px-[10px] py-[10px]`}
               type="text"
               placeholder="제목"
               onChange={(e) => titleHandler(e)}
