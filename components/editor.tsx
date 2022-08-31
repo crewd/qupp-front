@@ -11,7 +11,7 @@ const QuillEditor = ({
   refProp,
 }: {
   cssStyle: string;
-  getContents: React.Dispatch<React.SetStateAction<string | null>>;
+  getContents: React.Dispatch<React.SetStateAction<string>>;
   refProp: React.RefObject<ReactQuill>;
 }) => {
   const toolbarOptions = [
