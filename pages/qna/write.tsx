@@ -2,7 +2,8 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import ReactQuill from 'react-quill';
 import BgTitle from '../../components/common/bgTitle';
 
 const WysiwygEditor = dynamic(() => import('../../components/editor'), {
@@ -22,6 +23,10 @@ const AddPost = () => {
   const [titleError, setTitleError] = useState(false);
   const [contentsError, setContentsError] = useState(false);
 
+  const categoryRef = useRef<HTMLButtonElement>(null);
+  const titleRef = useRef<HTMLInputElement>(null);
+  const contentsRef = useRef<ReactQuill>(null);
+
   // 카테고리 select
   const [selectOpened, setSelectOpened] = useState(false);
 
@@ -35,16 +40,19 @@ const AddPost = () => {
   };
 
   // submit 핸들러
-  const onSubmit = (data: any) => {
-    if (selectTopic === '계열') {
+  const onSubmit = () => {
+    if (selectTopic === '계열' && categoryRef.current) {
+      categoryRef.current.focus();
       return setTopicError(true);
     }
 
-    if (!title) {
+    if (!title && titleRef.current) {
+      titleRef.current.focus();
       return setTitleError(true);
     }
 
     if (!contents || contents === '<p><br></p>') {
+      contentsRef.current!.focus();
       return setContentsError(true);
     }
 
@@ -96,6 +104,7 @@ const AddPost = () => {
               <button
                 className="flex items-center justify-between w-full"
                 onClick={() => setSelectOpened(!selectOpened)}
+                ref={categoryRef}
               >
                 <span
                   className={`w-full leading-[21px] text-left ${
@@ -139,6 +148,7 @@ const AddPost = () => {
               type="text"
               placeholder="제목"
               onChange={(e) => titleHandler(e)}
+              ref={titleRef}
             />
           </div>
           <div className="w-full h-[550px] mb-[40px] relative">
@@ -150,6 +160,7 @@ const AddPost = () => {
             <WysiwygEditor
               cssStyle="w-full h-[500px]"
               getContents={setContents}
+              refProp={contentsRef}
             />
           </div>
           <div className="flex justify-end mb-[10px]">

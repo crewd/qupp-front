@@ -8,9 +8,11 @@ Quill.register('modules/ImageResize', ImageResize);
 const QuillEditor = ({
   cssStyle,
   getContents,
+  refProp,
 }: {
   cssStyle: string;
   getContents: React.Dispatch<React.SetStateAction<string | null>>;
+  refProp: React.RefObject<ReactQuill>;
 }) => {
   const toolbarOptions = [
     [{ header: [1, 2, 3, false] }],
@@ -62,6 +64,7 @@ const QuillEditor = ({
       formats={formats}
       placeholder="내용을 입력해주세요"
       onChange={(value) => getContents(value)}
+      ref={refProp}
     />
   );
 };
