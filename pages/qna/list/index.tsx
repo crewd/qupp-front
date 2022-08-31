@@ -39,10 +39,10 @@ const QnA = ({ questions }: { questions: Questions }) => {
             카테고리
           </h2>
           <ul className="text-regular">
-            <li className="py-[10px] hover:font-bold hover:text-primary cursor-pointer">
+            <li className="cursor-pointer  hover:font-bold hover:text-primary">
               <Link href="?category=인문">
                 <a
-                  className={`w-full block ${
+                  className={`w-full block py-[10px] ${
                     category === '인문' && 'text-primary font-bold'
                   }`}
                 >
@@ -50,10 +50,10 @@ const QnA = ({ questions }: { questions: Questions }) => {
                 </a>
               </Link>
             </li>
-            <li className="py-[10px] hover:font-bold hover:text-primary cursor-pointer">
+            <li className="cursor-pointer  hover:font-bold hover:text-primary">
               <Link href="?category=사회">
                 <a
-                  className={`w-full block ${
+                  className={`w-full block py-[10px] ${
                     category === '사회' && 'text-primary font-bold'
                   }`}
                 >
@@ -61,10 +61,10 @@ const QnA = ({ questions }: { questions: Questions }) => {
                 </a>
               </Link>
             </li>
-            <li className="py-[10px] hover:font-bold hover:text-primary cursor-pointer">
+            <li className="cursor-pointer  hover:font-bold hover:text-primary">
               <Link href="?category=상경">
                 <a
-                  className={`w-full block ${
+                  className={`w-full block py-[10px] ${
                     category === '상경' && 'text-primary font-bold'
                   }`}
                 >
@@ -72,10 +72,10 @@ const QnA = ({ questions }: { questions: Questions }) => {
                 </a>
               </Link>
             </li>
-            <li className="py-[10px] hover:font-bold hover:text-primary cursor-pointer">
+            <li className="cursor-pointer  hover:font-bold hover:text-primary">
               <Link href="?category=자연과학">
                 <a
-                  className={`w-full block ${
+                  className={`w-full block py-[10px] ${
                     category === '자연과학' && 'text-primary font-bold'
                   }`}
                 >
@@ -83,10 +83,10 @@ const QnA = ({ questions }: { questions: Questions }) => {
                 </a>
               </Link>
             </li>
-            <li className="py-[10px] hover:font-bold hover:text-primary cursor-pointer">
+            <li className="cursor-pointer  hover:font-bold hover:text-primary">
               <Link href="?category=공학">
                 <a
-                  className={`w-full block ${
+                  className={`w-full block py-[10px] ${
                     category === '공학' && 'text-primary font-bold'
                   }`}
                 >
@@ -94,10 +94,10 @@ const QnA = ({ questions }: { questions: Questions }) => {
                 </a>
               </Link>
             </li>
-            <li className="py-[10px] hover:font-bold hover:text-primary cursor-pointer">
+            <li className="cursor-pointer  hover:font-bold hover:text-primary">
               <Link href="?category=예술">
                 <a
-                  className={`w-full block ${
+                  className={`w-full block py-[10px] ${
                     category === '예술' && 'text-primary font-bold'
                   }`}
                 >
@@ -105,10 +105,10 @@ const QnA = ({ questions }: { questions: Questions }) => {
                 </a>
               </Link>
             </li>
-            <li className="py-[10px] hover:font-bold hover:text-primary cursor-pointer">
+            <li className="cursor-pointer  hover:font-bold hover:text-primary">
               <Link href="?category=없음">
                 <a
-                  className={`w-full block ${
+                  className={`w-full block py-[10px] ${
                     category === '없음' && 'text-primary font-bold'
                   }`}
                 >
