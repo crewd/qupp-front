@@ -16,7 +16,7 @@ const AddPost = () => {
   // 카테고리, 제목, 내용
   const [selectTopic, setSelectTopic] = useState('계열');
   const [title, setTitle] = useState('');
-  const [contents, setContents] = useState<string | null>('');
+  const [contents, setContents] = useState<string>('');
 
   // 카테고리, 제목, 내용 에러
   const [topicError, setTopicError] = useState(false);
