@@ -27,3 +27,23 @@ export const answerRegistration = async (
 
   return data;
 };
+
+type Image = {
+  msg: string;
+  obj: {
+    url: string;
+  };
+};
+
+export const imageUpload = async (directory: string, image: any) => {
+  const { data }: { data: Image } = await instance.post(
+    `/image?directory=${directory}`,
+    image,
+  );
+
+  if (data.msg === '성공') {
+    return data.obj.url;
+  }
+
+  return false;
+};
