@@ -54,23 +54,20 @@ const QuillEditor = ({
     input.onchange = async () => {
       const file = input.files;
 
+      console.log(file);
+
       if (file) {
-        try {
-          const data = await imageUpload('question', file);
-          const range = refProp.current?.getEditor().getSelection()?.index;
+        const data = await imageUpload('question', file);
+        const range = refProp.current?.getEditor().getSelection()?.index;
 
-          let quill = refProp.current?.getEditor();
-          if (range !== null && range !== undefined) {
-            quill?.setSelection(range, 1);
+        let quill = refProp.current?.getEditor();
+        if (range) {
+          quill?.setSelection(range, 1);
 
-            quill?.clipboard.dangerouslyPasteHTML(
-              range,
-              `<img src=${data} alt=${file} />`,
-            );
-          }
-        } catch (error) {
-          const err = error as AxiosError;
-          return { ...err.response, success: false };
+          quill?.clipboard.dangerouslyPasteHTML(
+            range,
+            `<img src=${data} alt=${file} />`,
+          );
         }
       }
     };

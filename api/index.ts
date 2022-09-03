@@ -35,7 +35,7 @@ type Image = {
   };
 };
 
-export const imageUpload = async (directory: string, image: any) => {
+export const imageUpload = async (directory: string, image: FileList) => {
   const { data }: { data: Image } = await instance.post(
     `/image?directory=${directory}`,
     image,
