@@ -16,7 +16,7 @@ const DesktopNavMenu = () => {
         </Link>
       </div>
       <div className="font-bold">
-        <button className="lg:w-[90px] w-[60px] lg:h-[40px] h-[30px] bg-primary text-white rounded-3xl">
+        <button className="lg:w-[90px] w-[60px] lg:h-[40px] h-[30px] bg-gray-1 text-white rounded-3xl">
           <Link href="/login">
             <a className="block lg:h-[40px] h-[30px] lg:leading-[40px] leading-[30px]">
               로그인

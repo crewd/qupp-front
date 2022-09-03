@@ -120,21 +120,17 @@ const QnA = ({ questions }: { questions: Questions }) => {
             </li>
           </ul>
         </nav>
-        <div className="w-full px-[24px] pb-[20px] lg:mx-auto lg:ml-[24px] px-0 mx-auto bg-primary/10">
+        <div className="w-full px-[24px] pb-[20px] lg:mx-auto lg:ml-[24px] mx-auto bg-primary/10">
           <div className="py-[20px] mb-[20px] flex justify-between border-b-4 border-primary">
             <Link href="/qna/write">
               <a className="text-white p-[8px] rounded-lg bg-primary hover:bg-primary/70">
                 질문 하기
               </a>
             </Link>
-            <div className="px-[10px] bg-white flex items-center w-[50%] ">
-              <input
-                className="w-full outline-none"
-                type="text"
-                placeholder="검색어를 입력해 주세요"
-              />
+            <div className="px-[10px] bg-white flex items-center w-[50%]">
+              <input className="w-full outline-none" type="text" />
               <FontAwesomeIcon
-                className="text-[#ccc]"
+                className="text-[#ccc] pl-[10px]"
                 icon={faMagnifyingGlass}
               />
             </div>
@@ -144,7 +140,7 @@ const QnA = ({ questions }: { questions: Questions }) => {
               <Link href="/qna/post/1">
                 <a>
                   <PostCard
-                    category={`${category ? category : '인문'}`}
+                    answerCount="1"
                     title="이 문제는 어떻게 푸나요?"
                     contents="알려주세요"
                     writer="작성자"
@@ -155,7 +151,7 @@ const QnA = ({ questions }: { questions: Questions }) => {
               <Link href="/qna/post/1">
                 <a>
                   <PostCard
-                    category={`${category ? category : '인문'}`}
+                    answerCount="1"
                     title="이 문제는 어떻게 푸나요?"
                     contents="알려주세요"
                     writer="작성자"

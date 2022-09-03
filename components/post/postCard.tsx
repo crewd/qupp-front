@@ -1,19 +1,17 @@
 type Post = {
-  category: string;
+  answerCount: string;
   title: string;
   contents: string;
   writer: string;
   date: string;
 };
 
-const PostCard = ({ category, title, writer, date, contents }: Post) => {
+const PostCard = ({ title, writer, date, contents, answerCount }: Post) => {
   return (
     <div className="w-full p-[20px] border border-primary rounded-xl bg-white hover:scale-105 ease-in-out cursor-pointer duration-300 shadow-md mb-[15px]">
-      <div className="flex items-center relative before:absolute before:left-0 before:bottom-[-12px] before:w-full before:h-[1px] before:bg-gray-5">
-        <p className="bg-primary p-[5px] text-white text-center w-[80px]">
-          {category}
-        </p>
+      <div className="flex justify-between items-center relative before:absolute before:left-0 before:bottom-[-12px] before:w-full before:h-[1px] before:bg-gray-5">
         <p className="px-[10px] sm:text-md font-bold">{title}</p>
+        <p className="min-w-[50px]">답변: {answerCount}</p>
       </div>
       <div className="pt-[32px]">
         <p>{contents}</p>
