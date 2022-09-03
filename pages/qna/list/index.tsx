@@ -1,3 +1,5 @@
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -34,12 +36,12 @@ const QnA = ({ questions }: { questions: Questions }) => {
       </Head>
       <BgTitle>게시판</BgTitle>
       <div className="flex mt-[60px]">
-        <nav className="w-[360px] lg:block hidden p-[20px] border shadow-lg rounded-xl">
+        <nav className="w-[360px] lg:block hidden py-[39px] px-[20px] border shadow-lg rounded-xl">
           <h2 className="text-md font-bold text-primary pb-[10px] border-b-4 border-primary">
             카테고리
           </h2>
           <ul className="text-regular">
-            <li className="cursor-pointer  hover:font-bold hover:text-primary">
+            <li className="cursor-pointer hover:font-bold hover:text-primary">
               <Link href="?category=인문">
                 <a
                   className={`w-full block py-[10px] ${
@@ -50,7 +52,7 @@ const QnA = ({ questions }: { questions: Questions }) => {
                 </a>
               </Link>
             </li>
-            <li className="cursor-pointer  hover:font-bold hover:text-primary">
+            <li className="cursor-pointer hover:font-bold hover:text-primary">
               <Link href="?category=사회">
                 <a
                   className={`w-full block py-[10px] ${
@@ -61,7 +63,7 @@ const QnA = ({ questions }: { questions: Questions }) => {
                 </a>
               </Link>
             </li>
-            <li className="cursor-pointer  hover:font-bold hover:text-primary">
+            <li className="cursor-pointer hover:font-bold hover:text-primary">
               <Link href="?category=상경">
                 <a
                   className={`w-full block py-[10px] ${
@@ -72,7 +74,7 @@ const QnA = ({ questions }: { questions: Questions }) => {
                 </a>
               </Link>
             </li>
-            <li className="cursor-pointer  hover:font-bold hover:text-primary">
+            <li className="cursor-pointer hover:font-bold hover:text-primary">
               <Link href="?category=자연과학">
                 <a
                   className={`w-full block py-[10px] ${
@@ -83,7 +85,7 @@ const QnA = ({ questions }: { questions: Questions }) => {
                 </a>
               </Link>
             </li>
-            <li className="cursor-pointer  hover:font-bold hover:text-primary">
+            <li className="cursor-pointer hover:font-bold hover:text-primary">
               <Link href="?category=공학">
                 <a
                   className={`w-full block py-[10px] ${
@@ -94,7 +96,7 @@ const QnA = ({ questions }: { questions: Questions }) => {
                 </a>
               </Link>
             </li>
-            <li className="cursor-pointer  hover:font-bold hover:text-primary">
+            <li className="cursor-pointer hover:font-bold hover:text-primary">
               <Link href="?category=예술">
                 <a
                   className={`w-full block py-[10px] ${
@@ -105,7 +107,7 @@ const QnA = ({ questions }: { questions: Questions }) => {
                 </a>
               </Link>
             </li>
-            <li className="cursor-pointer  hover:font-bold hover:text-primary">
+            <li className="cursor-pointer hover:font-bold hover:text-primary">
               <Link href="?category=없음">
                 <a
                   className={`w-full block py-[10px] ${
@@ -118,13 +120,24 @@ const QnA = ({ questions }: { questions: Questions }) => {
             </li>
           </ul>
         </nav>
-        <div className="w-full lg:px-[60px] lg:mx-auto px-0 mx-auto">
-          <div className="pb-[20px] flex justify-end">
+        <div className="w-full px-[24px] pb-[20px] lg:mx-auto lg:ml-[24px] px-0 mx-auto bg-primary/10">
+          <div className="py-[20px] mb-[20px] flex justify-between border-b-4 border-primary">
             <Link href="/qna/write">
               <a className="text-white p-[8px] rounded-lg bg-primary hover:bg-primary/70">
                 질문 하기
               </a>
             </Link>
+            <div className="px-[10px] bg-white flex items-center w-[50%] ">
+              <input
+                className="w-full outline-none"
+                type="text"
+                placeholder="검색어를 입력해 주세요"
+              />
+              <FontAwesomeIcon
+                className="text-[#ccc]"
+                icon={faMagnifyingGlass}
+              />
+            </div>
           </div>
           {category !== '없음' ? (
             <div>
@@ -133,6 +146,7 @@ const QnA = ({ questions }: { questions: Questions }) => {
                   <PostCard
                     category={`${category ? category : '인문'}`}
                     title="이 문제는 어떻게 푸나요?"
+                    contents="알려주세요"
                     writer="작성자"
                     date="2022/08/24"
                   />
@@ -143,6 +157,7 @@ const QnA = ({ questions }: { questions: Questions }) => {
                   <PostCard
                     category={`${category ? category : '인문'}`}
                     title="이 문제는 어떻게 푸나요?"
+                    contents="알려주세요"
                     writer="작성자"
                     date="2022/08/24"
                   />
@@ -150,7 +165,7 @@ const QnA = ({ questions }: { questions: Questions }) => {
               </Link>
             </div>
           ) : (
-            <div className="">
+            <div className="bg-white p-[20px] h-[352px]">
               <p className="text-lg font-bold text-center">
                 등록된 질문이 없습니다
               </p>
