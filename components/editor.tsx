@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { createElement, useMemo } from 'react';
 import ReactQuill, { Quill } from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { ImageResize } from 'quill-image-resize-module-ts';
+import { AxiosError } from 'axios';
+import { imageUpload } from '../api';
 
 Quill.register('modules/ImageResize', ImageResize);
 
@@ -40,19 +42,55 @@ const QuillEditor = ({
     'color',
     'link',
     'image',
-    'video',
     'width',
   ];
 
-  const modules = {
-    toolbar: {
-      container: toolbarOptions,
-    },
-    ImageResize: {
-      parchment: Quill.import('parchment'),
-      modules: ['Resize', 'DisplaySize'],
-    },
+  const imageHandler = () => {
+    const input = document.createElement('input');
+    input.setAttribute('type', 'file');
+    input.setAttribute('accept', 'image/*');
+    input.click();
+
+    input.onchange = async () => {
+      const file = input.files;
+
+      if (file) {
+        try {
+          const data = await imageUpload('question', file);
+          const range = refProp.current?.getEditor().getSelection()?.index;
+
+          let quill = refProp.current?.getEditor();
+          if (range !== null && range !== undefined) {
+            quill?.setSelection(range, 1);
+
+            quill?.clipboard.dangerouslyPasteHTML(
+              range,
+              `<img src=${data} alt=${file} />`,
+            );
+          }
+        } catch (error) {
+          const err = error as AxiosError;
+          return { ...err.response, success: false };
+        }
+      }
+    };
   };
+
+  const modules = useMemo(
+    () => ({
+      toolbar: {
+        container: toolbarOptions,
+        handlers: {
+          image: imageHandler,
+        },
+      },
+      ImageResize: {
+        parchment: Quill.import('parchment'),
+        modules: ['Resize', 'DisplaySize'],
+      },
+    }),
+    [],
+  );
 
   const styles = cssStyle;
 
