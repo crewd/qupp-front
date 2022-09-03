@@ -6,7 +6,7 @@ type Answer = {
 
 const AnswerCard = () => {
   return (
-    <div className="p-[20px] border rounded-xl shadow-xl">
+    <div className="p-[20px] border rounded-xl shadow-xl bg-white">
       <h2 className="text-lg font-bold text-primary">답변</h2>
       <div className="py-[20px]">
         <p className="text-sm text-gray-5">2022/08/22</p>

@@ -137,18 +137,18 @@ const AddPost = () => {
               )}
             </div>
             {topicError && (
-              <p className="ml-4 text-red-500">* 계열을 선택해 주세요!</p>
+              <p className="ml-4 text-system-red">* 계열을 선택해 주세요!</p>
             )}
           </div>
           <div className="pb-[40px] relative">
             {titleError && (
-              <p className="absolute top-[10px] left-[100px] text-red-500">
+              <p className="absolute top-[10px] left-[100px] text-system-red">
                 * 제목을 입력해 주세요!
               </p>
             )}
             <input
               className={`w-full border-b outline-none ${
-                titleError ? 'border-red-500' : 'border-primary'
+                titleError ? 'border-system-red' : 'border-primary'
               } px-[10px] py-[10px]`}
               type="text"
               placeholder="제목"
@@ -158,7 +158,7 @@ const AddPost = () => {
           </div>
           <div className="w-full h-[550px] mb-[40px] relative">
             {contentsError && (
-              <p className="absolute text-red-500 top-[-30px]">
+              <p className="absolute text-system-red top-[-30px]">
                 * 내용을 입력해 주세요!
               </p>
             )}
