@@ -2,6 +2,7 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import React, { useEffect, useRef, useState } from 'react';
 import ReactQuill from 'react-quill';
 import BgTitle from '../../components/common/bgTitle';
@@ -12,6 +13,8 @@ const WysiwygEditor = dynamic(() => import('../../components/editor'), {
 
 const AddPost = () => {
   const category = ['인문', '사회', '상경', '자연과학', '공학', '예술'];
+  const router = useRouter();
+  const url = router.route.replace(/\/qna\//g, '');
 
   // 카테고리, 제목, 내용
   const [selectTopic, setSelectTopic] = useState('계열');
@@ -163,6 +166,7 @@ const AddPost = () => {
               cssStyle="w-full h-[500px]"
               getContents={setContents}
               refProp={contentsRef}
+              url={url}
             />
           </div>
           <div className="flex justify-end mb-[10px]">

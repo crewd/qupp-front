@@ -1,8 +1,7 @@
-import React, { createElement, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import ReactQuill, { Quill } from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { ImageResize } from 'quill-image-resize-module-ts';
-import { AxiosError } from 'axios';
 import { imageUpload } from '../api';
 
 Quill.register('modules/ImageResize', ImageResize);
@@ -11,10 +10,12 @@ const QuillEditor = ({
   cssStyle,
   getContents,
   refProp,
+  url,
 }: {
   cssStyle: string;
   getContents: React.Dispatch<React.SetStateAction<string>>;
   refProp: React.RefObject<ReactQuill>;
+  url?: string;
 }) => {
   const toolbarOptions = [
     [{ header: [1, 2, 3, false] }],
@@ -53,8 +54,9 @@ const QuillEditor = ({
 
     input.onchange = async () => {
       const file = input.files;
+      const directory = url ? url : 'answer';
 
-      console.log(file);
+      console.log(directory);
 
       if (file) {
         const data = await imageUpload('question', file);
