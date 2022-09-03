@@ -35,8 +35,8 @@ const QnA = ({ questions }: { questions: Questions }) => {
         <meta name="description" content={`Qupp ${category} 카테고리`} />
       </Head>
       <BgTitle>게시판</BgTitle>
-      <div className="flex mt-[60px]">
-        <nav className="w-[360px] lg:block hidden py-[39px] px-[20px] border shadow-lg rounded-xl">
+      <div className="flex">
+        <nav className="w-[360px] lg:block hidden py-[39px] px-[20px] border shadow-lg">
           <h2 className="text-md font-bold text-primary pb-[10px] border-b-4 border-primary">
             카테고리
           </h2>

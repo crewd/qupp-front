@@ -8,9 +8,9 @@ type Post = {
 
 const PostCard = ({ title, writer, date, contents, answerCount }: Post) => {
   return (
-    <div className="w-full p-[20px] border border-primary rounded-xl bg-white hover:scale-105 ease-in-out cursor-pointer duration-300 shadow-md mb-[15px]">
+    <div className="w-full p-[12px] border border-primary rounded-xl bg-white hover:scale-105 ease-in-out cursor-pointer duration-300 shadow-md mb-[15px]">
       <div className="flex justify-between items-center relative before:absolute before:left-0 before:bottom-[-12px] before:w-full before:h-[1px] before:bg-gray-5">
-        <p className="px-[10px] sm:text-md font-bold">{title}</p>
+        <p className="font-bold sm:text-md">{title}</p>
         <p className="min-w-[50px]">답변: {answerCount}</p>
       </div>
       <div className="pt-[32px]">
