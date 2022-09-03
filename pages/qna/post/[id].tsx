@@ -42,11 +42,11 @@ const Post = () => {
               <p className="text-[14px] leading-[24px]">글작성자</p>
               <p className="text-sm text-gray-5">2022/08/22</p>
             </div>
-            <div className="flex items-center pb-[10px] border-b border-primary">
+            <div className="flex items-center pb-[10px] border-b border-gray-5">
               <p className="border border-primary w-[60px] text-center">계열</p>
               <p className="ml-[20px]">인문</p>
             </div>
-            <div className="flex items-center pt-[20px] pb-[10px] border-b border-primary">
+            <div className="flex items-center pt-[20px] pb-[10px] border-b border-gray-5">
               <p>{data.obj.title}</p>
             </div>
             <div className="w-full mt-[20px]">
@@ -58,9 +58,7 @@ const Post = () => {
         </div>
 
         <div className="mt-[50px] md:px-[20px] md:w-[680px] md: m-auto">
-          <p className="text-md pb-[15px]">
-            <span className="font-bold">1</span>개의 답변이 있습니다
-          </p>
+          <p className="text-lg pb-[15px] font-bold">답변 1개</p>
           <AnswerCard />
         </div>
 
