@@ -28,7 +28,7 @@ const ModalNavMenu = () => {
   }, [menuOpened]);
 
   return (
-    <div className="block lg:hidden">
+    <div className="block md:hidden">
       <button onClick={menuHandler}>
         <FontAwesomeIcon icon={faBars} size="2x" />
       </button>

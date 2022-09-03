@@ -2,34 +2,35 @@ import Link from 'next/link';
 
 const DesktopNavMenu = () => {
   return (
-    <nav className="justify-between hidden w-full lg:flex">
-      <div className="flex ml-[40px] font-bold">
-        <Link href="/qna/list">
-          <a className="lg:h-[40px] h-[30px] lg:leading-[40px] leading-[30px] hover:text-primary">
-            게시판
-          </a>
-        </Link>
-        <Link href="/qna/write">
-          <a className="ml-[40px] lg:h-[40px] h-[30px] lg:leading-[40px] leading-[30px] hover:text-primary">
-            글 작성하기
-          </a>
-        </Link>
-      </div>
-      <div className="font-bold">
-        <button className="lg:w-[90px] w-[60px] lg:h-[40px] h-[30px] bg-gray-1 text-white rounded-3xl">
-          <Link href="/login">
-            <a className="block lg:h-[40px] h-[30px] lg:leading-[40px] leading-[30px]">
-              로그인
+    <nav className="justify-end hidden w-full md:flex">
+      <div className="flex font-bold">
+        <div className="flex items-center pr-[50px]">
+          <Link href="/">
+            <a className="lg:h-[40px] h-[30px] lg:leading-[40px] leading-[30px] hover:text-primary">
+              커프 소개
             </a>
           </Link>
-        </button>
-        <button className="lg:w-[90px] w-[60px] lg:h-[40px] h-[30px] ml-[20px] rounded-3xl">
-          <Link href="/signup">
-            <a className="block lg:h-[40px] h-[30px] lg:leading-[40px] leading-[30px]">
-              회원가입
+          <p className="px-[30px] text-gray-5 select-none">|</p>
+          <Link href="/qna/list">
+            <a className="lg:h-[40px] h-[30px] lg:leading-[40px] leading-[30px] hover:text-primary">
+              게시판
             </a>
           </Link>
-        </button>
+          <p className="px-[30px] text-gray-5 select-none">|</p>
+          <Link href="/qna/write">
+            <a className="lg:h-[40px] h-[30px] lg:leading-[40px] leading-[30px] hover:text-primary">
+              질문 작성하기
+            </a>
+          </Link>
+        </div>
+        <Link href="/login">
+          <a className="w-[80px] h-[40px] leading-[40px] text-center bg-gray-1 rounded-full text-white">
+            로그인
+          </a>
+        </Link>
+        <Link href="/signup">
+          <a className="h-[40px] leading-[40px] ml-[20px]">회원가입</a>
+        </Link>
       </div>
     </nav>
   );
