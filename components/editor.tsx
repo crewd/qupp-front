@@ -56,10 +56,8 @@ const QuillEditor = ({
       const file = input.files;
       const directory = url ? url : 'answer';
 
-      console.log(directory);
-
       if (file) {
-        const data = await imageUpload('question', file);
+        const data = await imageUpload(directory, file);
         const range = refProp.current?.getEditor().getSelection()?.index;
 
         let quill = refProp.current?.getEditor();

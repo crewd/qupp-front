@@ -171,7 +171,7 @@ const AddPost = () => {
           </div>
           <div className="flex justify-end mb-[10px]">
             <button
-              className="bg-primary text-white font-bold rounded-full w-[106px] h-[56px]"
+              className="bg-primary text-white font-bold rounded-xl w-full h-[48px]"
               onClick={onSubmit}
             >
               완료
