@@ -34,7 +34,7 @@ const Post = () => {
         <meta name="description" content="게시글" />
       </Head>
       <BgTitle>질문</BgTitle>
-      <div className="pt-[60px] lg:bg-primary/10">
+      <div className="pt-[60px] md:bg-primary/10">
         <div className="flex justify-center w-full md:px-[20px]">
           <div className="md:w-[680px] w-full border shadow-xl rounded-3xl p-[30px] bg-white">
             <h2 className="w-full text-lg font-bold text-primary">질문</h2>
@@ -57,7 +57,7 @@ const Post = () => {
           </div>
         </div>
 
-        <div className="mt-[50px] md:px-[20px] md:w-[680px] lg: m-auto">
+        <div className="mt-[50px] md:px-[20px] md:w-[680px] md: m-auto">
           <p className="text-md pb-[15px]">
             <span className="font-bold">1</span>개의 답변이 있습니다
           </p>
@@ -77,7 +77,7 @@ const Post = () => {
               />
             </div>
           </div>
-          <div className="flex justify-end bg-white md:w-[680px] md:px-[20px] lg:m-auto">
+          <div className="flex justify-end bg-white md:w-[680px] md:px-[20px] md:m-auto">
             <button className="bg-primary text-white font-bold rounded-xl w-full h-[48px]">
               완료
             </button>

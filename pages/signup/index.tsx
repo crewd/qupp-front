@@ -9,8 +9,8 @@ const SignUpPage = () => {
         <meta name="description" content="Qupp 회원가입" />
       </Head>
       <BgTitle>회원가입</BgTitle>
-      <div className="sm:p-[60px] px-[20px] py-[60px] sm:bg-primary/10">
-        <div className="sm:w-[400px] w-full sm:p-[30px] bg-white m-auto flex justify-center flex-col sm:border sm:shadow-xl sm:rounded-xl">
+      <div className="md:p-[60px] px-[20px] py-[60px] md:bg-primary/10">
+        <div className="md:w-[400px] w-full md:p-[30px] bg-white m-auto flex justify-center flex-col md:border md:shadow-xl md:rounded-xl">
           <div className="w-full flex flex-col gap-[20px]">
             <div className="w-full">
               <p className="leading-[42px] w-[160px] pr-[10px]">이메일</p>
