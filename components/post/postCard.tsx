@@ -8,7 +8,7 @@ type Post = {
 
 const PostCard = ({ category, title, writer, date, contents }: Post) => {
   return (
-    <div className="w-full p-[20px] border rounded-xl bg-white hover:scale-105 ease-in-out cursor-pointer duration-300 shadow-md mb-[15px]">
+    <div className="w-full p-[20px] border border-primary rounded-xl bg-white hover:scale-105 ease-in-out cursor-pointer duration-300 shadow-md mb-[15px]">
       <div className="flex items-center relative before:absolute before:left-0 before:bottom-[-12px] before:w-full before:h-[1px] before:bg-gray-5">
         <p className="bg-primary p-[5px] text-white text-center w-[80px]">
           {category}
