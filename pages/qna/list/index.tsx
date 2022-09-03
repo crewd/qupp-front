@@ -20,7 +20,7 @@ const QnA = ({ questions }: { questions: Questions }) => {
     const element = menuRef.current;
 
     if (!category) {
-      router.push('?category=인문');
+      router.push('?category=전체');
     }
 
     if (element && element.innerHTML === category) {
@@ -41,6 +41,17 @@ const QnA = ({ questions }: { questions: Questions }) => {
             카테고리
           </h2>
           <ul className="text-regular">
+            <li className="cursor-pointer hover:font-bold hover:text-primary">
+              <Link href="?category=전체">
+                <a
+                  className={`w-full block py-[10px] ${
+                    category === '전체' && 'text-primary font-bold'
+                  }`}
+                >
+                  전체
+                </a>
+              </Link>
+            </li>
             <li className="cursor-pointer hover:font-bold hover:text-primary">
               <Link href="?category=인문">
                 <a
@@ -121,14 +132,18 @@ const QnA = ({ questions }: { questions: Questions }) => {
           </ul>
         </nav>
         <div className="w-full px-[24px] pb-[20px] lg:mx-auto lg:ml-[24px] mx-auto bg-primary/10">
-          <div className="py-[20px] mb-[20px] flex justify-between border-b-4 border-primary">
+          <div className="py-[20px] mb-[20px] sm:flex justify-between border-b-4 border-primary">
             <Link href="/qna/write">
               <a className="text-white p-[8px] rounded-lg bg-primary hover:bg-primary/70">
                 질문 하기
               </a>
             </Link>
-            <div className="px-[10px] bg-white flex items-center w-[50%]">
-              <input className="w-full outline-none" type="text" />
+            <div className="px-[10px] sm:mt-0 mt-[20px] bg-white flex items-center sm:w-[50%] w-full h-[40px]">
+              <input
+                className="w-full outline-none"
+                type="text"
+                placeholder="검색어를 입력해 주세요"
+              />
               <FontAwesomeIcon
                 className="text-[#ccc] pl-[10px]"
                 icon={faMagnifyingGlass}
