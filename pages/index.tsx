@@ -61,7 +61,7 @@ const Home: NextPage = () => {
         className="flex flex-col items-center justify-around h-screen py-[70px]"
         ref={section1Ref}
       >
-        <div className="border border-gray-1 md:w-[900px] w-full relative py-[100px]">
+        <div className="border border-gray-1 md:w-[900px] w-full relative md:py-[100px] py-[60px]">
           <div className="absolute w-full h-full border border-gray-1 sm:top-[10px] top-[5px] sm:left-[10px] left-[5px]"></div>
           <div className="lg:text-[28px] md:text-lg text-md leading-[36px] font-bold text-center flex items-center flex-col h-full p-[20px]">
             <h2>교수님과 친구들에게 물어보기 어려워서 난처한 적이 많았죠?</h2>
