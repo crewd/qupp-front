@@ -9,6 +9,6 @@
     @apply text-gray-1;
     @apply overflow-y-scroll;
     @apply bg-white;
-    -webkit-tap-highlight-color: transparent
+    -webkit-tap-highlight-color: transparent;
   }
 }
