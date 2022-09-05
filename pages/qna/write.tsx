@@ -100,8 +100,8 @@ const AddPost = () => {
         <meta name="description" content="질문 등록" />
       </Head>
       <BgTitle>질문 등록</BgTitle>
-      <div className="md:py-[60px] py-[20px] md:bg-primary/10">
-        <div className="md:border max-w-[1100px] m-auto md:shadow-xl md:rounded-3xl md:p-[20px]  flex flex-col gap-[10px] bg-white">
+      <div className="lg:py-[60px] py-[20px] lg:bg-primary/10">
+        <div className="border max-w-[768px] m-auto shadow-xl rounded-3xl p-[20px] flex flex-col gap-[10px] bg-white">
           <div className="relative flex items-center">
             <div className="px-[10px] py-[10px] w-[130px] h-[45px] border-b border-primary">
               <button
@@ -156,14 +156,14 @@ const AddPost = () => {
               ref={titleRef}
             />
           </div>
-          <div className="w-full h-[550px] mb-[40px] relative">
+          <div className="w-full md:h-[550px] h-[350px] mb-[40px] relative">
             {contentsError && (
               <p className="absolute text-system-red top-[-30px]">
                 * 내용을 입력해 주세요!
               </p>
             )}
             <WysiwygEditor
-              cssStyle="w-full h-[500px]"
+              cssStyle="w-full md:h-[500px] h-[300px]"
               getContents={setContents}
               refProp={contentsRef}
               url={url}
