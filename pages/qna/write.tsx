@@ -100,8 +100,8 @@ const AddPost = () => {
         <meta name="description" content="질문 등록" />
       </Head>
       <BgTitle>질문 등록</BgTitle>
-      <div className="lg:py-[60px] py-[20px] lg:bg-primary/10">
-        <div className="lg:border max-w-[1100px] m-auto lg:shadow-xl lg:rounded-3xl lg:p-[20px]  flex flex-col gap-[10px] bg-white">
+      <div className="md:py-[60px] py-[20px] md:bg-primary/10">
+        <div className="md:border max-w-[1100px] m-auto md:shadow-xl md:rounded-3xl md:p-[20px]  flex flex-col gap-[10px] bg-white">
           <div className="relative flex items-center">
             <div className="px-[10px] py-[10px] w-[130px] h-[45px] border-b border-primary">
               <button

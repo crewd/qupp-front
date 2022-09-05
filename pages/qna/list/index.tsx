@@ -39,7 +39,7 @@ const QnA = ({ questions }: { questions: Questions }) => {
       </Head>
       <BgTitle>게시판</BgTitle>
       <div className="flex">
-        <div className="w-[360px] lg:block hidden">
+        <div className="w-[360px] md:block hidden">
           <nav className="py-[39px] px-[20px] border shadow-lg">
             <h2 className="text-md font-bold text-primary pb-[10px] border-b-4 border-primary">
               카테고리
@@ -145,11 +145,11 @@ const QnA = ({ questions }: { questions: Questions }) => {
           </div>
         </div>
         <Link href="/qna/write">
-          <a className="text-white text-center lg:hidden flex items-center w-[60px] h-[60px] rounded-full bg-primary hover:bg-primary/70 fixed bottom-[10px] right-[10px]">
+          <a className="text-white text-center md:hidden flex items-center w-[60px] h-[60px] rounded-full bg-primary hover:bg-primary/70 fixed bottom-[10px] right-[10px]">
             <FontAwesomeIcon className="w-full text-xl" icon={faPenToSquare} />
           </a>
         </Link>
-        <div className="w-full px-[24px] pb-[20px] lg:mx-auto lg:ml-[24px] mx-auto bg-primary/10">
+        <div className="w-full px-[24px] pb-[20px] md:mx-auto md:ml-[24px] mx-auto bg-primary/10">
           <div className="py-[20px] flex justify-end">
             <div className="px-[10px] bg-white flex items-center md:w-[50%] w-full h-[40px]">
               <input
