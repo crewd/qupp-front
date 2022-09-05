@@ -17,7 +17,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           <ModalNavMenu />
         </div>
       </header>
-      <main className="mt-[56px] px-[20px] pb-[40px] max-w-[1280px] m-auto">
+      <main className="mt-[56px] px-[10px] pb-[40px] max-w-[1280px] m-auto">
         {children}
       </main>
     </div>
