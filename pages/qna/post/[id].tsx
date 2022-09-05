@@ -76,7 +76,7 @@ const Post = () => {
             </div>
           </div>
           <div className="flex justify-end bg-white md:w-[680px] md:px-[20px] md:m-auto">
-            <button className="bg-primary text-white font-bold rounded-xl w-full h-[48px]">
+            <button className="bg-primary text-white font-bold rounded-lg w-full h-[48px]">
               완료
             </button>
           </div>
