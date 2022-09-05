@@ -36,7 +36,7 @@ const Post = () => {
       <BgTitle>질문</BgTitle>
       <div className="pt-[60px] md:bg-primary/10">
         <div className="flex justify-center w-full md:px-[20px]">
-          <div className="md:w-[680px] w-full border shadow-xl rounded-3xl p-[30px] bg-white">
+          <div className="md:w-[680px] w-full border shadow-xl rounded-2xl p-[30px] bg-white">
             <h2 className="w-full text-lg font-bold text-primary">질문</h2>
             <div className="py-[20px]">
               <p className="text-[14px] leading-[24px]">글작성자</p>
