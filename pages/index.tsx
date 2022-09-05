@@ -58,7 +58,7 @@ const Home: NextPage = () => {
       </div>
       <div className="py-[10px]"></div>
       <div
-        className="flex flex-col items-center justify-around h-screen"
+        className="flex flex-col items-center justify-around h-screen py-[70px]"
         ref={section1Ref}
       >
         <div className="border border-gray-1 md:w-[900px] w-full relative py-[100px]">
@@ -97,7 +97,7 @@ const Home: NextPage = () => {
               사진을 첨부해서 내 질문을 자세하게 설명해 보세요.
             </p>
           </div>
-          <div className="w-[300px] h-[400px] bg-[#d9d9d9] md:mt-0 mt-[70px]"></div>
+          <div className="md:w-[300px] w-full h-[400px] bg-[#d9d9d9] md:mt-0 mt-[70px]"></div>
         </div>
         <button
           className="flex flex-col items-center pt-[80px] m-auto"
@@ -143,7 +143,7 @@ const Home: NextPage = () => {
         className="w-screen py-[70px] ml-[calc(-50vw+50%)] bg-gray-200 mt-[70px] laeding-[30px] -z-20"
         ref={section4Ref}
       >
-        <div className=" max-w-[1024px] p-[10px] mx-auto flex md:flex-row flex-col justify-between">
+        <div className=" max-w-[1024px] p-[10px] mx-auto flex flex-col-reverse md:flex-row justify-between">
           <div className="text-lg font-bold">
             <div className="sm:w-[430px] w-full h-[400px] bg-[#d9d9d9] md:mt-0 mt-[70px] mb-[30px]"></div>
             <p>답변이 이미 달린 질문 글이면,</p>
