@@ -57,7 +57,7 @@ const Post = () => {
           </div>
         </div>
 
-        <div className="mt-[50px] md:px-[20px] md:w-[680px] md: m-auto">
+        <div className="mt-[50px] md:w-[680px] md: m-auto">
           <p className="text-lg pb-[15px] font-bold">답변 1개</p>
           <AnswerCard />
         </div>
