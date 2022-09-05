@@ -1,4 +1,7 @@
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import {
+  faMagnifyingGlass,
+  faPenToSquare,
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
@@ -36,109 +39,119 @@ const QnA = ({ questions }: { questions: Questions }) => {
       </Head>
       <BgTitle>게시판</BgTitle>
       <div className="flex">
-        <nav className="w-[360px] lg:block hidden py-[39px] px-[20px] border shadow-lg">
-          <h2 className="text-md font-bold text-primary pb-[10px] border-b-4 border-primary">
-            카테고리
-          </h2>
-          <ul className="text-regular">
-            <li className="cursor-pointer hover:font-bold hover:text-primary">
-              <Link href="?category=전체">
-                <a
-                  className={`w-full block py-[10px] ${
-                    category === '전체' && 'text-primary font-bold'
-                  }`}
-                >
-                  전체
-                </a>
-              </Link>
-            </li>
-            <li className="cursor-pointer hover:font-bold hover:text-primary">
-              <Link href="?category=인문">
-                <a
-                  className={`w-full block py-[10px] ${
-                    category === '인문' && 'text-primary font-bold'
-                  }`}
-                >
-                  인문
-                </a>
-              </Link>
-            </li>
-            <li className="cursor-pointer hover:font-bold hover:text-primary">
-              <Link href="?category=사회">
-                <a
-                  className={`w-full block py-[10px] ${
-                    category === '사회' && 'text-primary font-bold'
-                  }`}
-                >
-                  사회
-                </a>
-              </Link>
-            </li>
-            <li className="cursor-pointer hover:font-bold hover:text-primary">
-              <Link href="?category=상경">
-                <a
-                  className={`w-full block py-[10px] ${
-                    category === '상경' && 'text-primary font-bold'
-                  }`}
-                >
-                  상경
-                </a>
-              </Link>
-            </li>
-            <li className="cursor-pointer hover:font-bold hover:text-primary">
-              <Link href="?category=자연과학">
-                <a
-                  className={`w-full block py-[10px] ${
-                    category === '자연과학' && 'text-primary font-bold'
-                  }`}
-                >
-                  자연과학
-                </a>
-              </Link>
-            </li>
-            <li className="cursor-pointer hover:font-bold hover:text-primary">
-              <Link href="?category=공학">
-                <a
-                  className={`w-full block py-[10px] ${
-                    category === '공학' && 'text-primary font-bold'
-                  }`}
-                >
-                  공학
-                </a>
-              </Link>
-            </li>
-            <li className="cursor-pointer hover:font-bold hover:text-primary">
-              <Link href="?category=예술">
-                <a
-                  className={`w-full block py-[10px] ${
-                    category === '예술' && 'text-primary font-bold'
-                  }`}
-                >
-                  예술
-                </a>
-              </Link>
-            </li>
-            <li className="cursor-pointer hover:font-bold hover:text-primary">
-              <Link href="?category=없음">
-                <a
-                  className={`w-full block py-[10px] ${
-                    category === '없음' && 'text-primary font-bold'
-                  }`}
-                >
-                  게시글 없음
-                </a>
-              </Link>
-            </li>
-          </ul>
-        </nav>
-        <div className="w-full px-[24px] pb-[20px] lg:mx-auto lg:ml-[24px] mx-auto bg-primary/10">
-          <div className="py-[20px] mb-[20px] sm:flex justify-between border-b-4 border-primary">
+        <div className="w-[360px] lg:block hidden">
+          <nav className="py-[39px] px-[20px] border shadow-lg">
+            <h2 className="text-md font-bold text-primary pb-[10px] border-b-4 border-primary">
+              카테고리
+            </h2>
+            <ul className="text-regular">
+              <li className="cursor-pointer hover:font-bold hover:text-primary">
+                <Link href="?category=전체">
+                  <a
+                    className={`w-full block py-[10px] ${
+                      category === '전체' && 'text-primary font-bold'
+                    }`}
+                  >
+                    전체
+                  </a>
+                </Link>
+              </li>
+              <li className="cursor-pointer hover:font-bold hover:text-primary">
+                <Link href="?category=인문">
+                  <a
+                    className={`w-full block py-[10px] ${
+                      category === '인문' && 'text-primary font-bold'
+                    }`}
+                  >
+                    인문
+                  </a>
+                </Link>
+              </li>
+              <li className="cursor-pointer hover:font-bold hover:text-primary">
+                <Link href="?category=사회">
+                  <a
+                    className={`w-full block py-[10px] ${
+                      category === '사회' && 'text-primary font-bold'
+                    }`}
+                  >
+                    사회
+                  </a>
+                </Link>
+              </li>
+              <li className="cursor-pointer hover:font-bold hover:text-primary">
+                <Link href="?category=상경">
+                  <a
+                    className={`w-full block py-[10px] ${
+                      category === '상경' && 'text-primary font-bold'
+                    }`}
+                  >
+                    상경
+                  </a>
+                </Link>
+              </li>
+              <li className="cursor-pointer hover:font-bold hover:text-primary">
+                <Link href="?category=자연과학">
+                  <a
+                    className={`w-full block py-[10px] ${
+                      category === '자연과학' && 'text-primary font-bold'
+                    }`}
+                  >
+                    자연과학
+                  </a>
+                </Link>
+              </li>
+              <li className="cursor-pointer hover:font-bold hover:text-primary">
+                <Link href="?category=공학">
+                  <a
+                    className={`w-full block py-[10px] ${
+                      category === '공학' && 'text-primary font-bold'
+                    }`}
+                  >
+                    공학
+                  </a>
+                </Link>
+              </li>
+              <li className="cursor-pointer hover:font-bold hover:text-primary">
+                <Link href="?category=예술">
+                  <a
+                    className={`w-full block py-[10px] ${
+                      category === '예술' && 'text-primary font-bold'
+                    }`}
+                  >
+                    예술
+                  </a>
+                </Link>
+              </li>
+              <li className="cursor-pointer hover:font-bold hover:text-primary">
+                <Link href="?category=없음">
+                  <a
+                    className={`w-full block py-[10px] ${
+                      category === '없음' && 'text-primary font-bold'
+                    }`}
+                  >
+                    게시글 없음
+                  </a>
+                </Link>
+              </li>
+            </ul>
+          </nav>
+          <div className="pt-[10px] w-full">
             <Link href="/qna/write">
-              <a className="text-white p-[8px] rounded-lg bg-primary hover:bg-primary/70">
+              <a className="text-white text-center block p-[8px] rounded-lg bg-primary hover:bg-primary/70">
+                <FontAwesomeIcon className="pr-[10px]" icon={faPenToSquare} />
                 질문 하기
               </a>
             </Link>
-            <div className="px-[10px] sm:mt-0 mt-[20px] bg-white flex items-center sm:w-[50%] w-full h-[40px]">
+          </div>
+        </div>
+        <Link href="/qna/write">
+          <a className="text-white text-center lg:hidden flex items-center w-[60px] h-[60px] rounded-full bg-primary hover:bg-primary/70 fixed bottom-40 right-[10px]">
+            <FontAwesomeIcon className="w-full text-xl" icon={faPenToSquare} />
+          </a>
+        </Link>
+        <div className="w-full px-[24px] pb-[20px] lg:mx-auto lg:ml-[24px] mx-auto bg-primary/10">
+          <div className="py-[20px] flex justify-end">
+            <div className="px-[10px] bg-white flex items-center md:w-[50%] w-full h-[40px]">
               <input
                 className="w-full outline-none"
                 type="text"
