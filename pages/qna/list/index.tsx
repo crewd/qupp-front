@@ -145,7 +145,7 @@ const QnA = ({ questions }: { questions: Questions }) => {
           </div>
         </div>
         <Link href="/qna/write">
-          <a className="text-white text-center lg:hidden flex items-center w-[60px] h-[60px] rounded-full bg-primary hover:bg-primary/70 fixed bottom-40 right-[10px]">
+          <a className="text-white text-center lg:hidden flex items-center w-[60px] h-[60px] rounded-full bg-primary hover:bg-primary/70 fixed bottom-[10px] right-[10px]">
             <FontAwesomeIcon className="w-full text-xl" icon={faPenToSquare} />
           </a>
         </Link>
