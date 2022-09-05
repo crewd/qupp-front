@@ -49,12 +49,12 @@ const AddPost = () => {
       return categoryRef.current!.focus();
     }
 
-    if (!title) {
+    if (!title || title.match(/\s/g)) {
       setTitleError(true);
       return titleRef.current!.focus();
     }
 
-    if (!contents || contents === '<p><br></p>') {
+    if (!contents || contents === '<p><br></p>' || contents.match(/\s/g)) {
       setContentsError(true);
       return contentsRef.current!.focus();
     }
