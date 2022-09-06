@@ -1,6 +1,21 @@
 import { AnswerRegistration } from '../types/QnA';
 import { instance } from './instance';
 
+type User = {
+  email: string;
+  nickname: string;
+  password: string;
+};
+
+export const signUp = async (user: User) => {
+  try {
+    const { data } = await instance.post('/user', user);
+    return data;
+  } catch (error) {
+    return error;
+  }
+};
+
 export const getQuestionList = async () => {
   const { data } = await instance.get('/questions');
   if (!data) {
