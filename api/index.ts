@@ -16,6 +16,24 @@ export const signUp = async (user: User) => {
   }
 };
 
+export const emailDuplicateCheck = async (email: string) => {
+  const { data } = await instance.get(`user/duplicate/email?email=${email}`);
+  if (!data) {
+    return false;
+  }
+  return data;
+};
+
+export const nicknameDuplicateCheck = async (nickname: string) => {
+  const { data } = await instance.get(
+    `user/duplicate/nickname?nickname=${nickname}`,
+  );
+  if (!data) {
+    return false;
+  }
+  return data;
+};
+
 export const getQuestionList = async () => {
   const { data } = await instance.get('/questions');
   if (!data) {
