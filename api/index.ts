@@ -3,62 +3,76 @@ import { instance } from './instance';
 
 type User = {
   email: string;
-  nickname: string;
+  nickname?: string;
   password: string;
+};
+
+export const login = async (user: User) => {
+  try {
+    const data = await instance.post(`login`, user);
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export const signUp = async (user: User) => {
   try {
-    const { data } = await instance.post('/user', user);
+    const data = await instance.post(`user`, user);
     return data;
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 
 export const emailDuplicateCheck = async (email: string) => {
-  const { data } = await instance.get(`user/duplicate/email?email=${email}`);
-  if (!data) {
-    return false;
+  try {
+    const { data } = await instance.get(`user/duplicate/email?email=${email}`);
+    return data;
+  } catch (error) {
+    console.log(error);
   }
-  return data;
 };
 
 export const nicknameDuplicateCheck = async (nickname: string) => {
-  const { data } = await instance.get(
-    `user/duplicate/nickname?nickname=${nickname}`,
-  );
-  if (!data) {
-    return false;
+  try {
+    const { data } = await instance.get(
+      `user/duplicate/nickname?nickname=${nickname}`,
+    );
+    return data;
+  } catch (error) {
+    console.log(error);
   }
-  return data;
 };
 
 export const getQuestionList = async () => {
-  const { data } = await instance.get('/questions');
-  if (!data) {
-    return false;
+  try {
+    const { data } = await instance.get('questions');
+    return data;
+  } catch (error) {
+    console.log(error);
   }
-  return data;
 };
 
 export const getQuestionDetail = async (id: string) => {
-  const { data } = await instance.get(`/question/${id}`);
-
-  if (!data) {
-    return false;
+  try {
+    const { data } = await instance.get(`/question/${id}`);
+    return data;
+  } catch (error) {
+    console.log(error);
   }
-
-  return data;
 };
 
 export const answerRegistration = async (
   id: string,
   answer: AnswerRegistration,
 ) => {
-  const { data } = await instance.post(`/question/${id}/answer`, answer);
-
-  return data;
+  try {
+    const { data } = await instance.post(`/question/${id}/answer`, answer);
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 type Image = {

@@ -21,13 +21,11 @@ const SignUpPage = () => {
   };
 
   const signUpSubmit = () => {
-    console.log(
-      signUp({
-        email: email,
-        password: password,
-        nickname: nickName,
-      }),
-    );
+    signUp({
+      email: email,
+      nickname: nickName,
+      password: password,
+    });
   };
 
   useEffect(() => {

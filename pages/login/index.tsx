@@ -1,8 +1,21 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import { login } from '../../api';
 import BgTitle from '../../components/common/bgTitle';
+import useInput from '../../hook/useInput';
 
 const LoginPage = () => {
+  const [email, onChangeEmail] = useInput('');
+  const [password, onChangePassword] = useInput('');
+
+  const loginHandler = () => {
+    const user = {
+      email: 'qupp@gmail.com',
+      password: 'quppteam',
+    };
+    login(user);
+  };
+
   return (
     <div>
       <Head>
@@ -19,6 +32,7 @@ const LoginPage = () => {
                 className="outline-none border-b border-gray-5 w-full focus:border-primary py-[8px]"
                 type="email"
                 placeholder="이메일"
+                onChange={onChangeEmail}
               />
             </div>
             <div className="w-full">
@@ -27,11 +41,15 @@ const LoginPage = () => {
                 className="outline-none border-b border-gray-5 w-full focus:border-primary py-[8px]"
                 type="password"
                 placeholder="비밀번호"
+                onChange={onChangePassword}
               />
             </div>
           </div>
           <div className="flex flex-col gap-[15px] m-auto w-full mt-[20px]">
-            <button className="w-full h-[40px] outline-none hover:font-bold text-white  bg-primary rounded-md hover:bg-secondary-sBlue hover:text-white">
+            <button
+              className="w-full h-[40px] outline-none hover:font-bold text-white  bg-primary rounded-md hover:bg-secondary-sBlue hover:text-white"
+              onClick={loginHandler}
+            >
               로그인
             </button>
             <button className="w-full h-[40px] outline-none hover:font-bold text-primary border border-primary bg-white rounded-md hover:border-secondary-sBlue hover:text-secondary-sBlue">
