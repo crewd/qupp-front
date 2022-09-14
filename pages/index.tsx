@@ -61,7 +61,7 @@ const Home: NextPage = () => {
         className="flex flex-col items-center justify-around h-screen py-[70px]"
         ref={section1Ref}
       >
-        <div className="border border-gray-1 md:w-[900px] w-full relative md:py-[100px] py-[60px]">
+        <div className="border border-gray-1 max-w-[900px] w-full relative md:py-[100px] py-[60px]">
           <div className="absolute w-full h-full border border-gray-1 sm:top-[10px] top-[5px] sm:left-[10px] left-[5px]"></div>
           <div className="lg:text-[28px] md:text-lg text-md leading-[36px] font-bold text-center flex items-center flex-col h-full p-[20px]">
             <h2>교수님과 친구들에게 물어보기 어려워서 난처한 적이 많았죠?</h2>
@@ -171,7 +171,7 @@ const Home: NextPage = () => {
         </button>
       </div>
       <div className="py-[70px]" ref={section5Ref}>
-        <div className=" max-w-[1024px] p-[10px] mx-auto flex md:flex-row flex-col justify-between">
+        <div className=" max-w-[1024px] p-[10px] mx-auto flex md:gap-[50px] md:flex-row flex-col justify-between">
           <div className="text-lg font-bold">
             <h3 className="text-primary text-md pb-[30px]">모아보기</h3>
             <p>일단 게시판에서 검색해 보세요.</p>
