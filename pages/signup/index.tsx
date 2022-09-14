@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { useState, useEffect } from 'react';
-import { emailDuplicateCheck } from '../../api';
+import { emailDuplicateCheck, signUp } from '../../api';
 import BgTitle from '../../components/common/bgTitle';
 import useInput from '../../hook/useInput';
 
@@ -12,17 +12,36 @@ const SignUpPage = () => {
   const [passwordCheck, setPasswordCheck] = useState('');
   const [passwordError, setPasswordError] = useState(false);
 
+  const [EmailCheck, setEmailCheck] = useState(false);
+  const [NickNameCheck, setNickNameCheck] = useState(false);
+
   const onChangePasswordCheck = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPasswordCheck(e.target.value);
     setPasswordError(e.target.value != password);
   };
 
-  // useEffect(() => {
-  //   if (!email) {
-  //     return;
-  //   }
-  //   console.log(emailDuplicateCheck(email));
-  // }, [email]);
+  const signUpSubmit = () => {
+    console.log(
+      signUp({
+        email: email,
+        password: password,
+        nickname: nickName,
+      }),
+    );
+  };
+
+  useEffect(() => {
+    const searchDebounce = setTimeout(() => {
+      if (!email) {
+        return;
+      }
+      emailDuplicateCheck(email);
+    }, 500);
+
+    return () => {
+      clearTimeout(searchDebounce);
+    };
+  }, [email]);
 
   return (
     <div>
@@ -33,7 +52,7 @@ const SignUpPage = () => {
       <BgTitle>회원가입</BgTitle>
       <div className="md:p-[60px] px-[20px] py-[60px] md:bg-primary/10">
         <div className="md:w-[400px] w-full md:p-[30px] bg-white m-auto flex justify-center flex-col md:border md:shadow-xl md:rounded-xl">
-          <form className="w-full flex flex-col gap-[20px]">
+          <div className="w-full flex flex-col gap-[20px]">
             <div className="w-full">
               <label
                 className="leading-[42px] w-[160px] pr-[10px]"
@@ -104,11 +123,14 @@ const SignUpPage = () => {
               />
             </div>
             <div className="mt-[30px] flex justify-center">
-              <button className="w-full h-[40px] outline-none text-primary bg-white border border-primary rounded-md hover:font-bold hover:border-secondary-sBlue hover:text-secondary-sBlue">
+              <button
+                className="w-full h-[40px] outline-none text-primary bg-white border border-primary rounded-md hover:font-bold hover:border-secondary-sBlue hover:text-secondary-sBlue"
+                onClick={signUpSubmit}
+              >
                 회원가입
               </button>
             </div>
-          </form>
+          </div>
         </div>
       </div>
     </div>
