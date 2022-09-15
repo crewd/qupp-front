@@ -17,6 +17,8 @@ const QnA = ({ questions }: { questions: Questions }) => {
   const router = useRouter();
   const category = router.query.category;
 
+  console.log(questions);
+
   const menuRef = useRef<HTMLAnchorElement>(null);
 
   useEffect(() => {

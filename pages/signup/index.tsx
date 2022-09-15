@@ -1,26 +1,44 @@
 import Head from 'next/head';
 import { useState, useEffect } from 'react';
-import { emailDuplicateCheck, signUp } from '../../api';
+import { emailDuplicateCheck, nicknameDuplicateCheck, signUp } from '../../api';
 import BgTitle from '../../components/common/bgTitle';
 import useInput from '../../hook/useInput';
 
 const SignUpPage = () => {
   const [email, onChangeEmail] = useInput('');
+
   const [password, onChangePassword] = useInput('');
   const [nickName, onChangeNickName] = useInput('');
 
   const [passwordCheck, setPasswordCheck] = useState('');
   const [passwordError, setPasswordError] = useState(false);
 
-  const [EmailCheck, setEmailCheck] = useState(false);
-  const [NickNameCheck, setNickNameCheck] = useState(false);
+  const [emailCheck, setEmailCheck] = useState<boolean | undefined>(true);
+  const [nickNameCheck, setNickNameCheck] = useState<boolean | undefined>(true);
+  const [userCheck, setUserCheck] = useState<boolean>();
 
   const onChangePasswordCheck = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPasswordCheck(e.target.value);
     setPasswordError(e.target.value != password);
   };
 
-  const signUpSubmit = () => {
+  const signUpSubmit = async () => {
+    if (!email || !emailCheck) {
+      console.log('이메일');
+      return setUserCheck(false);
+    }
+
+    if (!nickName || !nickNameCheck) {
+      console.log('닉네임');
+      return setUserCheck(false);
+    }
+
+    if (!password || passwordError) {
+      console.log('비밀번호');
+      return setUserCheck(false);
+    }
+
+    setUserCheck(true);
     signUp({
       email: email,
       nickname: nickName,
@@ -29,17 +47,32 @@ const SignUpPage = () => {
   };
 
   useEffect(() => {
-    const searchDebounce = setTimeout(() => {
+    const searchDebounce = setTimeout(async () => {
       if (!email) {
         return;
       }
-      emailDuplicateCheck(email);
+      const emailDuplicate = await emailDuplicateCheck(email);
+      setEmailCheck(emailDuplicate);
     }, 500);
 
     return () => {
       clearTimeout(searchDebounce);
     };
   }, [email]);
+
+  useEffect(() => {
+    const searchDebounce = setTimeout(async () => {
+      if (!nickName) {
+        return;
+      }
+      const nickNameDuplicate = await nicknameDuplicateCheck(nickName);
+      setNickNameCheck(nickNameDuplicate);
+    }, 500);
+
+    return () => {
+      clearTimeout(searchDebounce);
+    };
+  }, [nickName]);
 
   return (
     <div>
@@ -66,6 +99,9 @@ const SignUpPage = () => {
                 placeholder="이메일"
                 onChange={onChangeEmail}
               />
+              {emailCheck === false && (
+                <p className="text-red-500">중복된 이메일입니다</p>
+              )}
             </div>
             <div className="w-full">
               <label
@@ -119,14 +155,22 @@ const SignUpPage = () => {
                 placeholder="닉네임"
                 onChange={onChangeNickName}
               />
+              {nickNameCheck === false && (
+                <p className="text-red-500">중복된 닉네임입니다</p>
+              )}
             </div>
-            <div className="mt-[30px] flex justify-center">
+            <div className="mt-[30px] flex flex-col justify-center">
               <button
                 className="w-full h-[40px] outline-none text-primary bg-white border border-primary rounded-md hover:font-bold hover:border-secondary-sBlue hover:text-secondary-sBlue"
                 onClick={signUpSubmit}
               >
                 회원가입
               </button>
+              {userCheck === false && (
+                <p className="w-full text-center text-red-500 pt-[15px]">
+                  입력된 정보를 확인 해 주세요
+                </p>
+              )}
             </div>
           </div>
         </div>

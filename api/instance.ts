@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const baseURL = '/api/';
+const baseURL =
+  'http://ec2-3-37-201-15.ap-northeast-2.compute.amazonaws.com:8080/';
 
 export const instance = axios.create({
   baseURL: baseURL,

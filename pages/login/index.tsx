@@ -9,11 +9,13 @@ const LoginPage = () => {
   const [password, onChangePassword] = useInput('');
 
   const loginHandler = () => {
-    const user = {
-      email: 'qupp@gmail.com',
-      password: 'quppteam',
-    };
-    login(user);
+    if (!email || !password) {
+      return console.log('x');
+    }
+    login({
+      email: email,
+      password: password,
+    });
   };
 
   return (
