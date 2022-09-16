@@ -33,13 +33,13 @@ const SignUpPage = () => {
       return setUserCheck(false);
     }
 
-    if (!password || passwordError) {
+    if (!password || passwordError || password !== passwordCheck) {
       console.log('비밀번호');
       return setUserCheck(false);
     }
 
     setUserCheck(true);
-    signUp({
+    await signUp({
       email: email,
       nickname: nickName,
       password: password,

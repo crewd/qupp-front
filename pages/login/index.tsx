@@ -8,14 +8,14 @@ const LoginPage = () => {
   const [email, onChangeEmail] = useInput('');
   const [password, onChangePassword] = useInput('');
 
-  const loginHandler = () => {
+  const loginHandler = async () => {
     if (!email || !password) {
       return console.log('x');
     }
-    login({
-      email: email,
-      password: password,
-    });
+    const userData = await login({ email: email, password: password });
+    // if(userData) {
+
+    // }
   };
 
   return (
