@@ -1,21 +1,41 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import { useState } from 'react';
+import { RecoilState, useRecoilState } from 'recoil';
 import { login } from '../../api';
 import BgTitle from '../../components/common/bgTitle';
 import useInput from '../../hook/useInput';
+import { userState } from '../../recoil/user';
+import { tokenStore } from '../../util/token';
 
 const LoginPage = () => {
+  const store = tokenStore;
+
+  const [user, setUser] = useRecoilState(userState);
+
   const [email, onChangeEmail] = useInput('');
   const [password, onChangePassword] = useInput('');
 
+  const [loginError, setLoginError] = useState(false);
+
   const loginHandler = async () => {
     if (!email || !password) {
-      return console.log('x');
+      return setLoginError(true);
     }
     const userData = await login({ email: email, password: password });
-    // if(userData) {
+    if (userData) {
+      store.set('token', userData.jwtToken);
+      store.set('email', userData.responseUser.email);
+      store.set('nickName', userData.responseUser.nickname);
 
-    // }
+      return setUser({
+        token: userData.jwtToken,
+        email: userData.responseUser.email,
+        nickName: userData.responseUser.nickname,
+        isLoggedIn: true,
+      });
+    }
+    return setLoginError(true);
   };
 
   return (
@@ -47,6 +67,11 @@ const LoginPage = () => {
               />
             </div>
           </div>
+          {loginError && (
+            <p className="font-bold text-center text-red-500">
+              로그인 정보를 확인해 주세요
+            </p>
+          )}
           <div className="flex flex-col gap-[15px] m-auto w-full mt-[20px]">
             <button
               className="w-full h-[40px] outline-none hover:font-bold text-white  bg-primary rounded-md hover:bg-secondary-sBlue hover:text-white"

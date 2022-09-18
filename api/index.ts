@@ -18,7 +18,7 @@ type LoginUser = {
 export const login = async (user: LoginUser) => {
   try {
     const data: User = await instance.post(`login`, user);
-    return data;
+    return data.obj;
   } catch (error) {
     console.log(error);
   }
