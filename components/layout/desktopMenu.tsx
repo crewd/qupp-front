@@ -1,6 +1,9 @@
 import Link from 'next/link';
+import { useRecoilValue } from 'recoil';
+import { userState } from '../../recoil/user';
 
 const DesktopNavMenu = () => {
+  const user = useRecoilValue(userState);
   return (
     <nav className="justify-end hidden w-full md:flex">
       <div className="flex font-bold">
@@ -23,14 +26,25 @@ const DesktopNavMenu = () => {
             </a>
           </Link>
         </div>
-        <Link href="/login">
-          <a className="w-[80px] h-[40px] leading-[40px] text-center bg-gray-1 rounded-full text-white">
-            로그인
-          </a>
-        </Link>
-        <Link href="/signup">
-          <a className="h-[40px] leading-[40px] ml-[20px]">회원가입</a>
-        </Link>
+        <div>
+          {user.isLoggedIn ? (
+            <Link href="/">
+              <a className="h-[40px] leading-[40px]">마이페이지</a>
+            </Link>
+          ) : (
+            <>
+              {' '}
+              <Link href="/login">
+                <a className="px-[20px] py-[8px] leading-[40px] text-center bg-gray-1 rounded-full text-white">
+                  로그인
+                </a>
+              </Link>
+              <Link href="/signup">
+                <a className="h-[40px] leading-[40px] ml-[20px]">회원가입</a>
+              </Link>
+            </>
+          )}
+        </div>
       </div>
     </nav>
   );

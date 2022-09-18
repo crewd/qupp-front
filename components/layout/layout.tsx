@@ -1,9 +1,26 @@
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useRecoilState } from 'recoil';
+import { userState } from '../../recoil/user';
+import { tokenStore } from '../../util/token';
 import DesktopNavMenu from './desktopMenu';
 import ModalNavMenu from './modalMenu';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
+  const store = tokenStore;
+  const [user, setUser] = useRecoilState(userState);
+
+  useEffect(() => {
+    if (store.isLoggedIn) {
+      setUser({
+        token: store.get('token')!,
+        email: store.get('email')!,
+        nickName: store.get('nickName')!,
+        isLoggedIn: store.isLoggedIn,
+      });
+    }
+  }, []);
+
   return (
     <div>
       <header>
