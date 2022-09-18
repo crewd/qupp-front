@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { RecoilState, useRecoilState } from 'recoil';
 import { login } from '../../api';
@@ -10,6 +11,7 @@ import { tokenStore } from '../../util/token';
 
 const LoginPage = () => {
   const store = tokenStore;
+  const router = useRouter();
 
   const [user, setUser] = useRecoilState(userState);
 
@@ -28,12 +30,14 @@ const LoginPage = () => {
       store.set('email', userData.responseUser.email);
       store.set('nickName', userData.responseUser.nickname);
 
-      return setUser({
+      setUser({
         token: userData.jwtToken,
         email: userData.responseUser.email,
         nickName: userData.responseUser.nickname,
         isLoggedIn: true,
       });
+
+      return router.replace('/');
     }
     return setLoginError(true);
   };

@@ -7,9 +7,6 @@ export const tokenStore = {
   },
   get: (name: string) => localStorage.getItem(name),
   get isLoggedIn() {
-    if (localStorage.length > 0) {
-      return true;
-    }
-    return false;
+    return !!this.get('token');
   },
 };

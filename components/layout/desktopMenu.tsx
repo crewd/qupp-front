@@ -1,9 +1,22 @@
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
-import { useRecoilValue } from 'recoil';
+import { useRecoilState } from 'recoil';
 import { userState } from '../../recoil/user';
 
 const DesktopNavMenu = () => {
-  const user = useRecoilValue(userState);
+  const [user, setUser] = useRecoilState(userState);
+
+  const logOut = () => {
+    localStorage.clear();
+    setUser({
+      token: '',
+      email: '',
+      nickName: '',
+      isLoggedIn: false,
+    });
+  };
+
   return (
     <nav className="justify-end hidden w-full md:flex">
       <div className="flex font-bold">
@@ -28,12 +41,18 @@ const DesktopNavMenu = () => {
         </div>
         <div>
           {user.isLoggedIn ? (
-            <Link href="/">
-              <a className="h-[40px] leading-[40px]">마이페이지</a>
-            </Link>
+            <>
+              <FontAwesomeIcon className="pr-[20px] text-lg" icon={faUser} />
+
+              <button
+                className="px-[15px] h-[40px] text-center bg-gray-1 rounded-full text-white ml-[20px]"
+                onClick={logOut}
+              >
+                로그아웃
+              </button>
+            </>
           ) : (
             <>
-              {' '}
               <Link href="/login">
                 <a className="px-[20px] py-[8px] leading-[40px] text-center bg-gray-1 rounded-full text-white">
                   로그인
