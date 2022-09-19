@@ -17,8 +17,6 @@ const QnA = ({ questions }: { questions: Questions }) => {
   const router = useRouter();
   const category = router.query.category;
 
-  console.log(questions);
-
   const menuRef = useRef<HTMLAnchorElement>(null);
 
   useEffect(() => {
@@ -167,28 +165,28 @@ const QnA = ({ questions }: { questions: Questions }) => {
           </div>
           {category !== '없음' ? (
             <div>
-              <Link href="/qna/post/1">
-                <a>
-                  <PostCard
-                    answerCount="1"
-                    title="이 문제는 어떻게 푸나요?"
-                    contents="알려주세요"
-                    writer="작성자"
-                    date="2022/08/24"
-                  />
-                </a>
-              </Link>
-              <Link href="/qna/post/1">
-                <a>
-                  <PostCard
-                    answerCount="1"
-                    title="이 문제는 어떻게 푸나요?"
-                    contents="알려주세요"
-                    writer="작성자"
-                    date="2022/08/24"
-                  />
-                </a>
-              </Link>
+              {questions.obj.map((data) => {
+                const date = new Date(data.updateTime);
+                const year = date.getFullYear();
+                const month =
+                  date.getMonth() + 1 < 10
+                    ? `0${date.getMonth() + 1}`
+                    : date.getMonth() + 1;
+                const day = date.getDate();
+                return (
+                  <Link href={`/qna/post/${data.id}`} key={data.id}>
+                    <a>
+                      <PostCard
+                        answerCount={data.title}
+                        title={data.title}
+                        contents={data.content}
+                        writer={data.user.nickname}
+                        date={`${year}-${month}-${day}`}
+                      />
+                    </a>
+                  </Link>
+                );
+              })}
             </div>
           ) : (
             <div className="bg-white p-[20px] h-[352px]">
