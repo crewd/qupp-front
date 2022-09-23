@@ -54,7 +54,7 @@ const QuillEditor = ({
 
     input.onchange = async () => {
       const file = input.files;
-      const directory = url ? url : 'answer';
+      const directory = url === 'write' ? 'question' : 'answer';
 
       if (file) {
         const data = await imageUpload(directory, file);
