@@ -7,12 +7,10 @@ import { login } from '../../api';
 import BgTitle from '../../components/common/bgTitle';
 import useInput from '../../hook/useInput';
 import { userState } from '../../recoil/user';
-import { tokenStore } from '../../util/token';
+import { setToken } from '../../util/token';
 
 const LoginPage = () => {
-  const store = tokenStore;
   const router = useRouter();
-
   const setUser = useSetRecoilState(userState);
 
   const [email, onChangeEmail] = useInput('');
@@ -25,9 +23,8 @@ const LoginPage = () => {
       return setLoginError(true);
     }
     const userData = await login({ email: email, password: password });
-    await console.log(userData);
     if (userData) {
-      store.set(userData);
+      setToken(userData);
 
       setUser({
         token: userData.jwtToken,

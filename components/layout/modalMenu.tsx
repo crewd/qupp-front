@@ -1,9 +1,20 @@
 import { faAngleDown, faBars, faX } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { getToken } from 'next-auth/jwt';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useEffect, useRef, useState } from 'react';
+import { useRecoilState } from 'recoil';
+import { userState } from '../../recoil/user';
+import { removeToken } from '../../util/token';
 
-const ModalNavMenu = () => {
+const ModalNavMenu = ({
+  logOut,
+  isLoggedIn,
+}: {
+  logOut: () => void;
+  isLoggedIn: boolean;
+}) => {
   const [menuOpened, setMenuOpened] = useState(false);
   const [categoryOpened, setCategoryOpened] = useState(false);
 
@@ -52,16 +63,36 @@ const ModalNavMenu = () => {
             onClick={menuHandler}
           />
         </div>
-        <div className="px-[15px] py-[10px]" onClick={menuHandler}>
-          <Link href="/login">
-            <a className="block">로그인</a>
-          </Link>
-        </div>
-        <div className="px-[15px] py-[10px]" onClick={menuHandler}>
-          <Link href="/signup">
-            <a className="block">회원가입</a>
-          </Link>
-        </div>
+        {isLoggedIn ? (
+          <>
+            <div className="px-[15px] py-[10px]" onClick={menuHandler}>
+              <Link href="/">
+                <a className="block">마이페이지</a>
+              </Link>
+            </div>
+            <div className="px-[15px] py-[10px]" onClick={menuHandler}>
+              <button onClick={logOut}>
+                <Link href="/login">
+                  <a className="block">로그아웃</a>
+                </Link>
+              </button>
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="px-[15px] py-[10px]" onClick={menuHandler}>
+              <Link href="/login">
+                <a className="block">로그인</a>
+              </Link>
+            </div>
+            <div className="px-[15px] py-[10px]" onClick={menuHandler}>
+              <Link href="/signup">
+                <a className="block">회원가입</a>
+              </Link>
+            </div>
+          </>
+        )}
+
         <div className="px-[15px] py-[10px]">
           <div
             className="relative flex items-center"

@@ -1,22 +1,14 @@
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
-import { useRecoilState } from 'recoil';
-import { userState } from '../../recoil/user';
 
-const DesktopNavMenu = () => {
-  const [user, setUser] = useRecoilState(userState);
-
-  const logOut = () => {
-    localStorage.removeItem('user');
-    setUser({
-      token: '',
-      email: '',
-      nickName: '',
-      isLoggedIn: false,
-    });
-  };
-
+const DesktopNavMenu = ({
+  logOut,
+  isLoggedIn,
+}: {
+  logOut: () => void;
+  isLoggedIn: boolean;
+}) => {
   return (
     <nav className="justify-end hidden w-full md:flex">
       <div className="flex font-bold">
@@ -40,7 +32,7 @@ const DesktopNavMenu = () => {
           </Link>
         </div>
         <div>
-          {user.isLoggedIn ? (
+          {isLoggedIn ? (
             <>
               <FontAwesomeIcon className="pr-[20px] text-lg" icon={faUser} />
 

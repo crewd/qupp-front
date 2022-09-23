@@ -12,12 +12,21 @@ import { getQuestionList } from '../../../api';
 import BgTitle from '../../../components/common/bgTitle';
 import PostCard from '../../../components/post/postCard';
 import { Questions } from '../../../types/QnA';
+import { getToken } from '../../../util/token';
 
 const QnA = ({ questions }: { questions: Questions }) => {
   const router = useRouter();
   const category = router.query.category;
 
   const menuRef = useRef<HTMLAnchorElement>(null);
+
+  const refreshData = () => {
+    router.replace(router.asPath);
+  };
+
+  useEffect(() => {
+    refreshData();
+  }, []);
 
   useEffect(() => {
     const element = menuRef.current;
@@ -207,7 +216,9 @@ const QnA = ({ questions }: { questions: Questions }) => {
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const questions = await getQuestionList(1, 'all');
-  if (!questions) {
+  const cookies = context.req.headers.cookie;
+
+  if (!questions || !cookies) {
     return {
       redirect: {
         permanent: false,

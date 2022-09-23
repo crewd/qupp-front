@@ -1,7 +1,5 @@
-import { AxiosError } from 'axios';
 import { AnswerRegistration } from '../types/QnA';
 import { User } from '../types/user';
-import { tokenStore } from '../util/token';
 import { instance } from './instance';
 
 type UserData = {
@@ -19,7 +17,6 @@ type LoginUser = {
 export const login = async (user: LoginUser) => {
   try {
     const data: User = await instance.post(`login`, user);
-    console.log(data);
     return data;
   } catch (error) {
     console.log(error);
