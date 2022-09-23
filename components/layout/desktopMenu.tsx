@@ -8,9 +8,7 @@ const DesktopNavMenu = () => {
   const [user, setUser] = useRecoilState(userState);
 
   const logOut = () => {
-    localStorage.removeItem('token');
-    localStorage.removeItem('email');
-    localStorage.removeItem('nickName');
+    localStorage.removeItem('user');
     setUser({
       token: '',
       email: '',
