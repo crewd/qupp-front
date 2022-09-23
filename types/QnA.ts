@@ -1,5 +1,8 @@
+import { User, UserInfo } from './user';
+
 type Question = {
   category: string;
+  coment: Coment[];
   content: string;
   id: number;
   registerTime: string;
@@ -7,24 +10,24 @@ type Question = {
   title: string;
   updateTime: string;
   urls: string[];
-  user: {
-    email: string;
-    id: number;
-    nickname: string;
-  };
+  user: UserInfo;
+};
+
+type Coment = {
+  coment: string;
+  id: number;
+  registerTime: string;
+  updateTime: string;
+  user: UserInfo;
 };
 
 type Answer = {
+  coments: Coment[];
   content: string;
   id: number;
-  images: string[];
   registerTime: string;
   updateTime: string;
-  user: {
-    email: string;
-    id: number;
-    nickname: string;
-  };
+  user: UserInfo;
 };
 
 export type AnswerRegistration = {
@@ -32,9 +35,13 @@ export type AnswerRegistration = {
   content: string;
 };
 
+type Content = {
+  answers: Answer[];
+  question: Question;
+};
+
 export type Questions = {
-  msg: string;
-  obj: Question[];
+  content: Content[];
 };
 
 export type QuestionDetail = {

@@ -1,5 +1,5 @@
 type Post = {
-  answerCount: string;
+  answerCount: number;
   title: string;
   contents: string;
   writer: string;

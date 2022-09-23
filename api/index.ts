@@ -1,6 +1,7 @@
 import { AxiosError } from 'axios';
 import { AnswerRegistration } from '../types/QnA';
 import { User } from '../types/user';
+import { tokenStore } from '../util/token';
 import { instance } from './instance';
 
 type UserData = {
@@ -18,7 +19,8 @@ type LoginUser = {
 export const login = async (user: LoginUser) => {
   try {
     const data: User = await instance.post(`login`, user);
-    return data.obj;
+    console.log(data);
+    return data;
   } catch (error) {
     console.log(error);
   }
@@ -66,10 +68,11 @@ export const nicknameDuplicateCheck = async (nickname: string) => {
   }
 };
 
-export const getQuestionList = async () => {
+export const getQuestionList = async (page: number, category: string) => {
   try {
-    const data = await instance.get('questions');
-    console.log(data);
+    const data = await instance.get(
+      `questions?page=${page}&category=${category}`,
+    );
     return data;
   } catch (error) {
     console.log(error);

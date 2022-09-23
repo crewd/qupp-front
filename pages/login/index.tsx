@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-import { RecoilState, useRecoilState } from 'recoil';
+import { useRecoilState, useSetRecoilState } from 'recoil';
 import { login } from '../../api';
 import BgTitle from '../../components/common/bgTitle';
 import useInput from '../../hook/useInput';
@@ -13,7 +13,7 @@ const LoginPage = () => {
   const store = tokenStore;
   const router = useRouter();
 
-  const [user, setUser] = useRecoilState(userState);
+  const setUser = useSetRecoilState(userState);
 
   const [email, onChangeEmail] = useInput('');
   const [password, onChangePassword] = useInput('');
@@ -25,10 +25,9 @@ const LoginPage = () => {
       return setLoginError(true);
     }
     const userData = await login({ email: email, password: password });
+    await console.log(userData);
     if (userData) {
-      store.set('token', userData.jwtToken);
-      store.set('email', userData.responseUser.email);
-      store.set('nickName', userData.responseUser.nickname);
+      store.set(userData);
 
       setUser({
         token: userData.jwtToken,
@@ -36,7 +35,7 @@ const LoginPage = () => {
         nickName: userData.responseUser.nickname,
         isLoggedIn: true,
       });
-
+      setLoginError(false);
       return router.replace('/');
     }
     return setLoginError(true);

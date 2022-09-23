@@ -1,12 +1,19 @@
+import { User } from '../types/user';
+
 export const tokenStore = {
-  set: (key: string, value: string) => {
-    if (!value) {
+  set: (token: User) => {
+    if (!token) {
       return;
     }
-    localStorage.setItem(key, value);
+    return localStorage.setItem('user', JSON.stringify(token));
   },
-  get: (name: string) => localStorage.getItem(name),
+  get: () => localStorage.getItem('user'),
   get isLoggedIn() {
-    return !!this.get('token');
+    return !!this.get();
+  },
+  get getToken() {
+    if (typeof window !== 'undefined') {
+      return JSON.parse(localStorage.getItem('user')!);
+    }
   },
 };

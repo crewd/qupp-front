@@ -1,11 +1,10 @@
+export type UserInfo = {
+  email: string;
+  id: number;
+  nickname: string;
+};
+
 export type User = {
-  msg: string;
-  obj: {
-    jwtToken: string;
-    responseUser: {
-      email: string;
-      id: number;
-      nickname: string;
-    };
-  };
+  jwtToken: string;
+  responseUser: UserInfo;
 };

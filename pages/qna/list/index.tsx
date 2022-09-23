@@ -165,8 +165,9 @@ const QnA = ({ questions }: { questions: Questions }) => {
           </div>
           {category !== '없음' ? (
             <div>
-              {questions.obj.map((data) => {
-                const date = new Date(data.updateTime);
+              {questions.content.map((data) => {
+                const question = data.question;
+                const date = new Date(question.updateTime);
                 const year = date.getFullYear();
                 const month =
                   date.getMonth() + 1 < 10
@@ -174,13 +175,13 @@ const QnA = ({ questions }: { questions: Questions }) => {
                     : date.getMonth() + 1;
                 const day = date.getDate();
                 return (
-                  <Link href={`/qna/post/${data.id}`} key={data.id}>
+                  <Link href={`/qna/post/${question.id}`} key={question.id}>
                     <a>
                       <PostCard
-                        answerCount={data.title}
-                        title={data.title}
-                        contents={data.content}
-                        writer={data.user.nickname}
+                        answerCount={data.answers.length}
+                        title={question.title}
+                        contents={question.content}
+                        writer={question.user.nickname}
                         date={`${year}-${month}-${day}`}
                       />
                     </a>
@@ -205,7 +206,15 @@ const QnA = ({ questions }: { questions: Questions }) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const questions = await getQuestionList();
+  const questions = await getQuestionList(1, 'all');
+  if (!questions) {
+    return {
+      redirect: {
+        permanent: false,
+        destination: '/login',
+      },
+    };
+  }
   return {
     props: {
       questions,
